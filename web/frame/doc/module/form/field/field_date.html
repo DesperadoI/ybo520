@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>表单元素 - 时间选择框</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../../include.js"></script>
+<script type="text/javascript" src="../../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../../doc.css" />
+<script type="text/javascript">
+	hait.register("hait.form.field.DateField");
+	var date;
+	$(document).ready(function() {
+		//初始化代码显示
+		date = new hait.form.field.DateField();
+		date.placeholder = "请选择时间...";
+		date.startDate = "2016-11-10";
+		date.endDate = "2016-11-20";
+		date.draw();
+		$("#mydate").append(date.obj);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<B>时间选择框</B>
+	</p>
+	<p>表单元素，时间选择框，继承自<a href="../field.html">hait.form.Field</a>元素</p>
+	<p>
+		<B>类名</B>
+	</p>
+	<p>hait.form.field.DateField</p>
+	<p>
+		<B>属性</B>
+	</p>
+	<ul>
+		<li>id : 如果没有设置，那么系统将自动生成</li>
+		<li>name : 名称</li>
+		<li>text : 描述名称</li>
+		<li>type : 类别</li>
+		<li>defaultValue : 默认值</li>
+		<li>value : 当前值</li>
+		<li>placeholder : 占位符</li>
+		<li>required : 是否必须</li>
+		<li>disabled : 是否禁用</li>
+		<li>readonly : 是否只读</li>
+		<li>pattern : 正则表达式</li>
+		<li>patternMessage : 当正则表达式没有验证通过时显示的提示</li>
+		<li>style : 最外层的样式设置</li>
+		<li>format : 格式化文本yyyy-MM-dd 或者 yyyy-M-d</li>
+		<li>startDate : 可选择的开始日期</li>
+		<li>endDate : 可选择的结束日期</li>
+	</ul>
+	<p>
+		<B>事件</B>
+	</p>
+	<ul>
+		<li>onchange(date,prevValue,curValue) :当选择变化的时候触发</li>
+	</ul>
+	<p>
+		<B>方法</B>
+	</p>
+	<ul>
+		<li>draw() : 直接绘制该对象</li>
+		<li>getValue() : 获取值</li>
+		<li>setValue(val)	 : 设置值</li>
+		<li>setDisabled(isDisabled) : 设置禁用</li>
+		<li>setReadonly(isReadonly) : 设置只读</li>
+		<li>validate() : 验证自身数据的方法，验证是否必须，正则表达式</li>
+		<li>reset() : 重置的基本实现</li>
+	</ul>
+	<p>
+		<B>使用示例</B>
+	</p>
+	<p>代码1：直接在页面上书写元素（下划线改为减号使用）</p>
+	<pre class="brush:js;">
+		<input type="text" hait_type="hait.form.field.DateField" value="2015-04-05"/>
+	</pre>
+	<p>效果1：</p>
+	&nbsp;时间选择框：
+	<input id="testDate" type="date" hait-type="hait.form.field.DateField" value="2015-04-05"/>
+	<br>
+	<button class="hait-button icon-search" onclick="showValue()">获取值</button>
+	<script type="text/javascript">
+	function showValue(){
+		var testDate = hait.getCompById("testDate");
+		alert(testDate.getValue());
+	}
+	</script>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+	var date = new hait.form.field.DateField();
+	date.placeholder = "请选择时间...";
+	date.startDate = "2016-11-10";
+	date.endDate = "2016-11-20";
+	date.draw();
+	$("#mydate").append(date.obj);
+	</pre>
+	<p>效果2：</p>
+	<span style="float: left;">&nbsp;时间选择框：</span><div id="mydate" style="float: left;"></div>
+	<br> <br> <br> <br> <br> <br><br> <br> <br> <br> <br> <br><br> <br> <br> <br> <br> <br><br> <br> <br> <br> <br> <br>
+	<script type="text/javascript">
+	//初始化代码显示
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

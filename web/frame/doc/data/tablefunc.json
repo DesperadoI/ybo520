@@ -1,0 +1,48 @@
+{
+  "global": {
+    "flag": 1,
+    "message": "success"
+  },
+  "responses": [
+    {
+      "flag": 1,
+      "items": [
+        {
+          "dict_id": "21",
+          "item_id": "61",
+          "item_name": "正在审核",
+          "item_note": "订单正在审核",
+          "item_sort": "1",
+          "item_val": "1"
+        },
+        {
+          "dict_id": "21",
+          "item_id": "62",
+          "item_name": "等待客户确认",
+          "item_note": "",
+          "item_sort": "2",
+          "item_val": "2"
+        },
+        {
+          "dict_id": "21",
+          "item_id": "63",
+          "item_name": "等待出厂",
+          "item_note": "",
+          "item_sort": "3",
+          "item_val": "3"
+        },
+        {
+          "dict_id": "21",
+          "item_id": "64",
+          "item_name": "正在运输",
+          "item_note": "",
+          "item_sort": "4",
+          "item_val": "4"
+        }
+      ],
+      "length": 4,
+      "message": "success",
+      "total": 200
+    }
+  ]
+}

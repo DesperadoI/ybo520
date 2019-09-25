@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>数据操作 - PROC存储过程</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../include.js"></script>
+<script type="text/javascript" src="../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../doc.css" />
+<script type="text/javascript">
+	$(document).ready(function() {
+		//初始化代码显示
+		SyntaxHighlighter.all();
+	});
+
+	function execute1() {
+		request({
+			data : [ {
+				funcId : "bex_doc_proc_menus",
+				parentId : "0",
+				start : "0",
+				limit : "5"
+			} ],
+			func : function(data) {
+				var xmlDoc = $("responses > response:eq(0)", data);
+				// 解析出其中的数据
+				var flag = xmlDoc.find("flag").text();
+				var message = xmlDoc.find("message").text();
+				var total = xmlDoc.find("total").text();
+				var count = xmlDoc.find("length").text();
+				var items = xmlDoc.find("items").children("item");
+				var data = new Array();
+				for ( var i = 0; i < items.length; i++) {
+					// 根据页面配置XML读取需要的信息
+					var item = $(items[i]);
+					// 根据配置的列信息进行读取
+					var curDate = {};
+					// 将该对象的所有子项作为内容进行添加
+					item.children().each(function() {
+						var fieldName = this.nodeName;
+						var fieldValue = $(this).text();
+						curDate[fieldName] = fieldValue;
+					});
+
+					data.push(curDate);
+				}
+
+				alert("flag:" + flag + ",message:" + message + ",total:" + total + ",count:" + count);
+				alert(JSON.stringify(data));
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<p>
+		<B>PROC存储过程</B>
+	</p>
+	<p>PROC存储过程，在XML配置中，可以访问数据库存储过程</p>
+	<p>
+		<B>操作示例</B>
+	</p>
+	<p>元数据配置：</p>
+	<pre class="brush:js;">
+		<bex id="bex_doc_proc_menus" type="proc" proc="hait_doc_proc_menus" page="true">
+			<param name="parentId" type="int" nullValue="" />
+		</bex>
+	</pre>
+	<p>注：存储过程默认会传递两个参数(v_funcId,v_uid)，如果配置了page属性，那么将默认传递四个参数(v_funcId,v_uid,v_start,v_limit)</p>
+	<p>
+		<b>存储过程：</b>
+	</p>
+	<pre class="brush:js;">
+	CREATE PROCEDURE hait_proc_user_menus_power(v_funcId varchar(20),v_uid int,v_start int,v_limit int,v_parentId int)
+	BEGIN
+		set @p_parentId = v_parentId;
+	 	set @p_start = v_start;
+	  	set @p_limit = v_limit;
+	  
+	  	/*创建语句*/
+		set @sql_stmt = "select * from t_sys_menus where parent_id = ? limit ?,?";
+	  
+		/*返回的状态信息*/
+		select '1','查询成功';
+		
+		/*执行语句并返回实际的结果*/
+		prepare stmt from @sql_stmt;
+		execute stmt using @p_parentId,@p_start,@p_limit;
+		deallocate prepare stmt;
+		commit;
+	END
+	</pre>
+	<p>
+		<b>查询数据操作：</b>
+	</p>
+	<pre class="brush:js;">
+		request({
+			data : [ {
+				funcId : "bex_doc_proc_menus",
+				parentId : "0",
+				start : "0",
+				limit : "5"
+			} ],
+			func : function(data) {
+				var xmlDoc = $("responses > response:eq(0)", data);
+				// 解析出其中的数据
+				var flag = xmlDoc.find("flag").text();
+				var message = xmlDoc.find("message").text();
+				var total = xmlDoc.find("total").text();
+				var count = xmlDoc.find("length").text();
+				var items = xmlDoc.find("items").children("item");
+				var data = new Array();
+				for ( var i = 0; i < items.length; i++) {
+					// 根据页面配置XML读取需要的信息
+					var item = $(items[i]);
+					// 根据配置的列信息进行读取
+					var curDate = {};
+					// 将该对象的所有子项作为内容进行添加
+					item.children().each(function() {
+						var fieldName = this.nodeName;
+						var fieldValue = $(this).text();
+						curDate[fieldName] = fieldValue;
+					});
+
+					data.push(curDate);
+				}
+
+				alert("flag:" + flag + ",message:" + message + ",total:" + total + ",count:" + count);
+				alert(JSON.stringify(data));
+			}
+		});
+	</pre>
+	<button class="hait_button" onclick="execute1()">查询数据操作</button>
+	<p>
+		<b>添加时发送出去的XML信息：</b>
+	</p>
+	<pre class="brush:js;">
+		<?xml version="1.0" encoding="UTF-8"?>
+		<requests>
+			<global>
+			</global>
+			<request>
+				<funcId>bex_doc_proc_menus</funcId>
+				<parentId>0</parentId>
+				<start>0</start>
+				<limit>5</limit>
+			</request>
+		</requests>
+	</pre>
+</body>
+</html>

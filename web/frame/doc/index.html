@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hait6.0帮助文档</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="../include.js"></script>
+<script type="text/javascript">
+
+hait.register("hait.tree.Tree");
+
+$(document).ready(function(){
+	if($(document).width() > 1024){
+		$(document.body).css("overflow","hidden");
+		$(".data_frame").css("overflow","hidden");
+	}
+});
+</script>
+<style type="text/css">
+.doc_container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-color: #fafafa;
+}
+
+.doc_container #mainTree {
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+
+.doc_container .data_frame {
+	width: 80%;
+	height: 100%;
+	position: absolute;
+	left: 20%;
+	border-left: 1px solid black;
+	text-align: left;
+}
+
+iframe {
+	position: absolute;
+}
+</style>
+</body>
+</head>
+
+<body>
+	<div class="doc_container">
+		<ul id="mainTree" hait-type="hait.tree.Tree" mode="local">
+			<div text="关于文档" icon="images/document_comments.png" url="module/about_doc.html" target="mainFrame"></div>
+			<div text="关于框架" icon="images/help.png" url="module/about_hait.html" target="mainFrame"></div>
+			<div text="核心方法" icon="images/cog.png" url="module/core/core.html" target="mainFrame"></div>
+			<div text="工具方法" icon="images/book.png" url="module/core/util.html" target="mainFrame"></div>
+			<div text="常规组件">
+				<div text="列表" icon="images/table.png" url="module/grid/grid.html" target="mainFrame"></div>
+				<div text="分组列表" icon="images/table.png" url="module/grid/group_grid.html" target="mainFrame"></div>
+				<div text="树形" icon="images/node-tree.png" url="module/tree/tree.html" target="mainFrame"></div>
+				<div text="选项卡" icon="images/menu.png" url="module/layout/tablayout.html" target="mainFrame"></div>
+				<div text="对话框" icon="images/dialog.png" url="module/dialog/dialog.html" target="mainFrame"></div>
+				<div text="表单" icon="images/form.png" url="module/form/form.html" target="mainFrame"></div>
+				<div text="按钮" icon="images/html.png" url="module/form/button.html" target="mainFrame"></div>
+			</div>
+			<div text="表单元素">
+				<div text="文本输入框" icon="images/text.png" url="module/form/field/field_text.html" target="mainFrame"></div>
+				<div text="文本输入查询框" icon="images/text.png" url="module/form/field/field_search_text.html" target="mainFrame"></div>
+				<div text="时间选择框" icon="images/time.png" url="module/form/field/field_date.html" target="mainFrame"></div>
+				<div text="单复选下拉列表" icon="images/text_list_bullets.png" url="module/form/field/field_select.html" target="mainFrame"></div>
+				<div text="查询下拉列表" icon="images/text_list_bullets.png" url="module/form/field/field_search_select.html" target="mainFrame"></div>
+				<div text="复选框" icon="images/check_box.png" url="module/form/field/field_checkbox.html" target="mainFrame"></div>
+				<div text="单选框" icon="images/radiobutton.png" url="module/form/field/field_radio.html" target="mainFrame"></div>
+				<div text="复选框组" icon="images/check_box.png" url="module/form/field/field_checkbox_group.html" target="mainFrame"></div>
+				<div text="单选框组" icon="images/radiobutton.png" url="module/form/field/field_radio_group.html" target="mainFrame"></div>
+				<div text="树形单复选下拉列表" icon="images/node-tree.png" url="module/form/field/field_tree.html" target="mainFrame"></div>
+				<div text="放大镜组件" icon="images/magnifier.png" url="module/form/field/field_magnifier.html" target="mainFrame"></div>
+				<div text="图片上传组件" icon="images/magnifier.png" url="module/form/field/field_image_upload.html" target="mainFrame"></div>
+			</div>
+			<div text="数据访问">
+				<div text="JDBC基本增删改查" icon="images/database_edit.png" url="module/data/jdbc_base.html" target="mainFrame"></div>
+				<div text="JDBC事务批量操作" icon="images/database_edit.png" url="module/data/jdbc_transaction.html" target="mainFrame"></div>
+				<div text="JDBC关联查询" icon="images/database_edit.png" url="module/data/jdbc_query_adv.html" target="mainFrame"></div>
+				<div text="SQL基本操作" icon="images/database_edit.png" url="module/data/jdbc_sql_query.html" target="mainFrame"></div>
+				<div text="SQL动态操作" icon="images/database_edit.png" url="module/data/jdbc_sql_query_adv.html" target="mainFrame"></div>
+				<div text="FUNCTION混合操作" icon="images/database_edit.png" url="module/data/function.html" target="mainFrame"></div>
+			</div>
+		</ul>
+		<div class="data_frame">
+			<iframe id="mainFrame" name="mainFrame" src="module/about_doc.html" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%"></iframe>
+		</div>
+	</div>
+</html>

@@ -1,0 +1,1256 @@
+{
+  "ACCOUNT_CURRENT_NAME": [
+    {
+      "dict_id": "27",
+      "item_id": "87",
+      "item_name": "充值",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "27",
+      "item_id": "88",
+      "item_name": "提现",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "27",
+      "item_id": "89",
+      "item_name": "收入",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "27",
+      "item_id": "90",
+      "item_name": "支出",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "27",
+      "item_id": "91",
+      "item_name": "退还",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    },
+    {
+      "dict_id": "27",
+      "item_id": "92",
+      "item_name": "提现申请",
+      "item_note": "",
+      "item_sort": "6",
+      "item_val": "6"
+    },
+    {
+      "dict_id": "27",
+      "item_id": "93",
+      "item_name": "提现取消",
+      "item_note": "",
+      "item_sort": "7",
+      "item_val": "7"
+    },
+    {
+      "dict_id": "27",
+      "item_id": "94",
+      "item_name": "支付申请",
+      "item_note": "",
+      "item_sort": "8",
+      "item_val": "8"
+    },
+    {
+      "dict_id": "27",
+      "item_id": "95",
+      "item_name": "支付取消",
+      "item_note": "",
+      "item_sort": "9",
+      "item_val": "9"
+    },
+    {
+      "dict_id": "27",
+      "item_id": "96",
+      "item_name": "冻结",
+      "item_note": "",
+      "item_sort": "10",
+      "item_val": "10"
+    }
+  ],
+  "ADVERT_PLACE": [
+    {
+      "dict_id": "34",
+      "item_id": "151",
+      "item_name": "首页广告",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    }
+  ],
+  "AUTH_ACCESS_TYPE": [
+    {
+      "dict_id": "3",
+      "item_id": "5",
+      "item_name": "部门",
+      "item_note": "通过部门设置权限",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "3",
+      "item_id": "6",
+      "item_name": "职位",
+      "item_note": "通过职位设置权限",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "3",
+      "item_id": "7",
+      "item_name": "个人",
+      "item_note": "通过个人设置权限",
+      "item_sort": "3",
+      "item_val": "3"
+    }
+  ],
+  "BANK_TYPE": [
+    {
+      "dict_id": "5",
+      "item_id": "11",
+      "item_name": "中国银行",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "12",
+      "item_name": "中国农业银行",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "13",
+      "item_name": "中国工商银行",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "14",
+      "item_name": "中国建设银行",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "15",
+      "item_name": "中信银行",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "16",
+      "item_name": "中国邮政储蓄银行",
+      "item_note": "",
+      "item_sort": "6",
+      "item_val": "6"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "17",
+      "item_name": "中国民生银行",
+      "item_note": "",
+      "item_sort": "7",
+      "item_val": "7"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "18",
+      "item_name": "华夏银行",
+      "item_note": "",
+      "item_sort": "8",
+      "item_val": "8"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "19",
+      "item_name": "交通银行",
+      "item_note": "",
+      "item_sort": "9",
+      "item_val": "9"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "20",
+      "item_name": "兴业银行",
+      "item_note": "",
+      "item_sort": "10",
+      "item_val": "10"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "21",
+      "item_name": "中国光大银行",
+      "item_note": "",
+      "item_sort": "11",
+      "item_val": "11"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "22",
+      "item_name": "浦发银行",
+      "item_note": "",
+      "item_sort": "12",
+      "item_val": "12"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "24",
+      "item_name": "成都银行",
+      "item_note": "",
+      "item_sort": "13",
+      "item_val": "13"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "25",
+      "item_name": "招商银行",
+      "item_note": "",
+      "item_sort": "14",
+      "item_val": "14"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "28",
+      "item_name": "平安银行",
+      "item_note": "",
+      "item_sort": "15",
+      "item_val": "15"
+    },
+    {
+      "dict_id": "5",
+      "item_id": "29",
+      "item_name": "昆仑银行",
+      "item_note": "",
+      "item_sort": "16",
+      "item_val": "16"
+    }
+  ],
+  "BUY_UNIT": [
+    {
+      "dict_id": "12",
+      "item_id": "38",
+      "item_name": "车",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "12",
+      "item_id": "39",
+      "item_name": "吨",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "12",
+      "item_id": "119",
+      "item_name": "米",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "12",
+      "item_id": "144",
+      "item_name": "块",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "12",
+      "item_id": "145",
+      "item_name": "根",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    },
+    {
+      "dict_id": "12",
+      "item_id": "147",
+      "item_name": "吨",
+      "item_note": "",
+      "item_sort": "6",
+      "item_val": "6"
+    },
+    {
+      "dict_id": "12",
+      "item_id": "152",
+      "item_name": "只",
+      "item_note": "",
+      "item_sort": "7",
+      "item_val": "7"
+    },
+    {
+      "dict_id": "12",
+      "item_id": "153",
+      "item_name": "条",
+      "item_note": "",
+      "item_sort": "8",
+      "item_val": "8"
+    },
+    {
+      "dict_id": "12",
+      "item_id": "154",
+      "item_name": "瓶",
+      "item_note": "",
+      "item_sort": "9",
+      "item_val": "9"
+    },
+    {
+      "dict_id": "12",
+      "item_id": "158",
+      "item_name": "M³",
+      "item_note": "",
+      "item_sort": "10",
+      "item_val": "10"
+    }
+  ],
+  "COMMENT_ITEM": [
+    {
+      "dict_id": "28",
+      "item_id": "109",
+      "item_name": "诚信守时",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "28",
+      "item_id": "110",
+      "item_name": "司机态度",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "28",
+      "item_id": "111",
+      "item_name": "客服态度",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "28",
+      "item_id": "112",
+      "item_name": "售后服务",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "28",
+      "item_id": "113",
+      "item_name": "产品质量",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    }
+  ],
+  "CUSTOMER_STATE": [
+    {
+      "dict_id": "11",
+      "item_id": "40",
+      "item_name": "未审核",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "11",
+      "item_id": "41",
+      "item_name": "正常",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "11",
+      "item_id": "42",
+      "item_name": "禁用",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    }
+  ],
+  "CUSTOMER_TYPE": [
+    {
+      "dict_id": "10",
+      "item_id": "34",
+      "item_name": "个人",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "10",
+      "item_id": "35",
+      "item_name": "企业",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "EMPLOYEE_STATE": [
+    {
+      "dict_id": "1",
+      "item_id": "1",
+      "item_name": "正常",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "1",
+      "item_id": "2",
+      "item_name": "禁用",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "FREEZE_NOTE": [
+    {
+      "dict_id": "26",
+      "item_id": "86",
+      "item_name": "冻结订单金额",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "26",
+      "item_id": "97",
+      "item_name": "解冻订单金额",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "FREEZE_TYPE": [
+    {
+      "dict_id": "24",
+      "item_id": "80",
+      "item_name": "冻结",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "24",
+      "item_id": "81",
+      "item_name": "解冻",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "GENDER": [
+    {
+      "dict_id": "4",
+      "item_id": "8",
+      "item_name": "男",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "4",
+      "item_id": "9",
+      "item_name": "女",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "4",
+      "item_id": "10",
+      "item_name": "未知",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    }
+  ],
+  "INTEGRAL_EVENT_TYPE": [
+    {
+      "dict_id": "33",
+      "item_id": "148",
+      "item_name": "增加积分",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "33",
+      "item_id": "149",
+      "item_name": "扣除积分",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "OPENING_CITY": [
+    {
+      "dict_id": "9",
+      "item_id": "37",
+      "item_name": "贵阳市",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "9",
+      "item_id": "134",
+      "item_name": "六盘水市",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "10"
+    },
+    {
+      "dict_id": "9",
+      "item_id": "135",
+      "item_name": "遵义市",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "9",
+      "item_id": "136",
+      "item_name": "铜仁市",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "9",
+      "item_id": "137",
+      "item_name": "黔西南州",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    },
+    {
+      "dict_id": "9",
+      "item_id": "138",
+      "item_name": "毕节",
+      "item_note": "",
+      "item_sort": "6",
+      "item_val": "6"
+    },
+    {
+      "dict_id": "9",
+      "item_id": "139",
+      "item_name": "安顺市",
+      "item_note": "",
+      "item_sort": "7",
+      "item_val": "7"
+    },
+    {
+      "dict_id": "9",
+      "item_id": "140",
+      "item_name": "黔东南州",
+      "item_note": "",
+      "item_sort": "8",
+      "item_val": "8"
+    },
+    {
+      "dict_id": "9",
+      "item_id": "141",
+      "item_name": "黔南州",
+      "item_note": "",
+      "item_sort": "9",
+      "item_val": "9"
+    },
+    {
+      "dict_id": "9",
+      "item_id": "36",
+      "item_name": "演示",
+      "item_note": "",
+      "item_sort": "10",
+      "item_val": "1"
+    }
+  ],
+  "ORDER_FOLLOW_NOTE": [
+    {
+      "dict_id": "25",
+      "item_id": "85",
+      "item_name": "您提交了订单,请等待审核",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "25",
+      "item_id": "99",
+      "item_name": "您的订单已通过审核,请查看并确认",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "25",
+      "item_id": "100",
+      "item_name": "订单已确认,等待货物出厂",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "25",
+      "item_id": "103",
+      "item_name": "订单已出厂,正在运输中",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "25",
+      "item_id": "104",
+      "item_name": "运输完成,等待订单验收",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    },
+    {
+      "dict_id": "25",
+      "item_id": "107",
+      "item_name": "订单已验收,本次交易完成",
+      "item_note": "",
+      "item_sort": "6",
+      "item_val": "6"
+    },
+    {
+      "dict_id": "25",
+      "item_id": "98",
+      "item_name": "您已经取消了这笔订单",
+      "item_note": "",
+      "item_sort": "7",
+      "item_val": "7"
+    },
+    {
+      "dict_id": "25",
+      "item_id": "116",
+      "item_name": "您的订单已评价完毕",
+      "item_note": "",
+      "item_sort": "8",
+      "item_val": "8"
+    },
+    {
+      "dict_id": "25",
+      "item_id": "133",
+      "item_name": "审核通过,等待验收",
+      "item_note": "自提使用",
+      "item_sort": "9",
+      "item_val": "9"
+    }
+  ],
+  "ORDER_STATE": [
+    {
+      "dict_id": "21",
+      "item_id": "61",
+      "item_name": "正在审核",
+      "item_note": "订单正在审核",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "21",
+      "item_id": "62",
+      "item_name": "等待客户确认",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "21",
+      "item_id": "63",
+      "item_name": "等待出厂",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "21",
+      "item_id": "64",
+      "item_name": "正在运输",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "21",
+      "item_id": "82",
+      "item_name": "待验收",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    },
+    {
+      "dict_id": "21",
+      "item_id": "65",
+      "item_name": "已验收",
+      "item_note": "",
+      "item_sort": "6",
+      "item_val": "6"
+    },
+    {
+      "dict_id": "21",
+      "item_id": "66",
+      "item_name": "作废订单",
+      "item_note": "作废订单",
+      "item_sort": "7",
+      "item_val": "7"
+    },
+    {
+      "dict_id": "21",
+      "item_id": "83",
+      "item_name": "已完成",
+      "item_note": "",
+      "item_sort": "8",
+      "item_val": "8"
+    }
+  ],
+  "PAYMENT_TYPE": [
+    {
+      "dict_id": "17",
+      "item_id": "49",
+      "item_name": "支付宝",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "17",
+      "item_id": "50",
+      "item_name": "直接充值",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "POST_REPORT": [
+    {
+      "dict_id": "8",
+      "item_id": "30",
+      "item_name": "无需质检报告",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "8",
+      "item_id": "31",
+      "item_name": "需要3天质检报告",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "8",
+      "item_id": "32",
+      "item_name": "需要28天质检报告",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "8",
+      "item_id": "33",
+      "item_name": "两种质检报告都需要",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    }
+  ],
+  "PRODUCT_UNIT": [
+    {
+      "dict_id": "14",
+      "item_id": "43",
+      "item_name": "散装",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "14",
+      "item_id": "44",
+      "item_name": "袋装",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "14",
+      "item_id": "118",
+      "item_name": "米",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "14",
+      "item_id": "142",
+      "item_name": "块",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "14",
+      "item_id": "143",
+      "item_name": "根",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    },
+    {
+      "dict_id": "14",
+      "item_id": "146",
+      "item_name": "吨",
+      "item_note": "",
+      "item_sort": "6",
+      "item_val": "6"
+    },
+    {
+      "dict_id": "14",
+      "item_id": "155",
+      "item_name": "只",
+      "item_note": "",
+      "item_sort": "7",
+      "item_val": "7"
+    },
+    {
+      "dict_id": "14",
+      "item_id": "156",
+      "item_name": "条",
+      "item_note": "",
+      "item_sort": "8",
+      "item_val": "8"
+    },
+    {
+      "dict_id": "14",
+      "item_id": "157",
+      "item_name": "瓶",
+      "item_note": "",
+      "item_sort": "9",
+      "item_val": "9"
+    },
+    {
+      "dict_id": "14",
+      "item_id": "159",
+      "item_name": "M³",
+      "item_note": "",
+      "item_sort": "10",
+      "item_val": "10"
+    }
+  ],
+  "PROVIDER_STATE": [
+    {
+      "dict_id": "20",
+      "item_id": "58",
+      "item_name": "未审核",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "20",
+      "item_id": "59",
+      "item_name": "正常",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "20",
+      "item_id": "60",
+      "item_name": "禁用",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    }
+  ],
+  "RECHARGE_STATE": [
+    {
+      "dict_id": "18",
+      "item_id": "51",
+      "item_name": "等待付款",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "18",
+      "item_id": "53",
+      "item_name": "充值成功",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "18",
+      "item_id": "54",
+      "item_name": "充值失败",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "18",
+      "item_id": "55",
+      "item_name": "线下充值申请",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "18",
+      "item_id": "52",
+      "item_name": "锁定",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    }
+  ],
+  "RECHARGE_TARGET": [
+    {
+      "dict_id": "19",
+      "item_id": "56",
+      "item_name": "可用余额",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "19",
+      "item_id": "57",
+      "item_name": "有价证劵",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "RECHARGE_TYPE": [
+    {
+      "dict_id": "16",
+      "item_id": "47",
+      "item_name": "在线付款",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "16",
+      "item_id": "48",
+      "item_name": "现金充值",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "16",
+      "item_id": "72",
+      "item_name": "支票充值",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "16",
+      "item_id": "73",
+      "item_name": "承兑汇票",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "16",
+      "item_id": "150",
+      "item_name": "抵用金额",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    }
+  ],
+  "SMS_PLATFORM_TYPE": [
+    {
+      "dict_id": "7",
+      "item_id": "27",
+      "item_name": "亿美短信",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    }
+  ],
+  "SMS_SEND_TYPE": [
+    {
+      "dict_id": "6",
+      "item_id": "23",
+      "item_name": "资金变动",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "6",
+      "item_id": "26",
+      "item_name": "验证码",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "TRANSORDER_FOLLOW_STATE": [
+    {
+      "dict_id": "23",
+      "item_id": "74",
+      "item_name": "生成运输单",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "23",
+      "item_id": "76",
+      "item_name": "车辆出厂",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "23",
+      "item_id": "77",
+      "item_name": "运输单已卸货",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "23",
+      "item_id": "78",
+      "item_name": "等待收款",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "23",
+      "item_id": "79",
+      "item_name": "已完成",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    },
+    {
+      "dict_id": "23",
+      "item_id": "115",
+      "item_name": "已被取消",
+      "item_note": "",
+      "item_sort": "6",
+      "item_val": "6"
+    },
+    {
+      "dict_id": "23",
+      "item_id": "117",
+      "item_name": "删除运输单",
+      "item_note": "",
+      "item_sort": "7",
+      "item_val": "7"
+    },
+    {
+      "dict_id": "23",
+      "item_id": "120",
+      "item_name": "客户已评价",
+      "item_note": "",
+      "item_sort": "8",
+      "item_val": "8"
+    }
+  ],
+  "TRANSPORTATION": [
+    {
+      "dict_id": "15",
+      "item_id": "45",
+      "item_name": "商家提供",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "15",
+      "item_id": "46",
+      "item_name": "自提",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "TRANS_STATE": [
+    {
+      "dict_id": "22",
+      "item_id": "67",
+      "item_name": "待出车",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "22",
+      "item_id": "68",
+      "item_name": "已出厂",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "22",
+      "item_id": "69",
+      "item_name": "已卸货",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "22",
+      "item_id": "70",
+      "item_name": "待收款",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "22",
+      "item_id": "71",
+      "item_name": "完成",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    },
+    {
+      "dict_id": "22",
+      "item_id": "114",
+      "item_name": "已取消",
+      "item_note": "",
+      "item_sort": "6",
+      "item_val": "6"
+    }
+  ],
+  "USER_TYPE": [
+    {
+      "dict_id": "32",
+      "item_id": "131",
+      "item_name": "买家",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "32",
+      "item_id": "132",
+      "item_name": "运输方",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "WITHDRAW_STATE": [
+    {
+      "dict_id": "31",
+      "item_id": "126",
+      "item_name": "等待审核",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "31",
+      "item_id": "127",
+      "item_name": "提现成功",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    },
+    {
+      "dict_id": "31",
+      "item_id": "128",
+      "item_name": "提现失败",
+      "item_note": "",
+      "item_sort": "3",
+      "item_val": "3"
+    },
+    {
+      "dict_id": "31",
+      "item_id": "129",
+      "item_name": "已经支付",
+      "item_note": "",
+      "item_sort": "4",
+      "item_val": "4"
+    },
+    {
+      "dict_id": "31",
+      "item_id": "130",
+      "item_name": "客户取消",
+      "item_note": "",
+      "item_sort": "5",
+      "item_val": "5"
+    }
+  ],
+  "WITHDRAW_TYPE": [
+    {
+      "dict_id": "30",
+      "item_id": "124",
+      "item_name": "在线申请提现",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "30",
+      "item_id": "125",
+      "item_name": "自动申请提现",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ],
+  "YES_NO": [
+    {
+      "dict_id": "2",
+      "item_id": "3",
+      "item_name": "是",
+      "item_note": "",
+      "item_sort": "1",
+      "item_val": "1"
+    },
+    {
+      "dict_id": "2",
+      "item_id": "4",
+      "item_name": "否",
+      "item_note": "",
+      "item_sort": "2",
+      "item_val": "2"
+    }
+  ]
+}

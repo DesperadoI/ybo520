@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+body {
+	margin: 0px;
+	padding:10px;
+	font-size: 14px;
+	background-color: #fafafa;
+	text-align: left;
+}
+
+b{
+	color: #2ba50c;
+	font-weight: bold;
+	font-family: Verdana;
+	margin-bottom: 5px;
+}
+li{
+	line-height: 20px;
+}
+textarea{
+	width: 90%;
+}
+
+p{
+	margin-left: 10px;
+}

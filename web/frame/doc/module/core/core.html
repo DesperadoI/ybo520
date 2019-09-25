@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>全局方法</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../include.js"></script>
+<link rel="stylesheet" href="../doc.css" />
+</head>
+<body>
+<p><B>全局方法</B></p>
+<ul>
+	<li>inherit(Class) 继承</li>
+	<li>request(ajaxParam)  统一的请求数据的方法
+		<ul>
+			<li>例如：request({<br>
+					url:'data.do',					//提交url, 默认'data.do'<br>
+					async:true,						//是否异步，默认true<br>
+					loading:true,					//是否存在提示框，默认true<br>
+					global:{},						//请求顶级参数<br>
+					data:[],							//提交数据，可多个<br>
+					func:function(data){},	//回调函数<br>
+				})</li>
+		</ul>
+	</li>
+	<li>hait.namespace(fullNS) 创建命名空间
+		<ul>
+			<li>例如：hait.namespace("hait.form"); </li>
+		</ul>
+	</li>
+	<li>hait.register(comp)	注册组件，系统立即载入该组件，如果该组件已经在缓存中存在，那么就直接读取缓存中的信息
+		<ul>
+			<li>例如：hait.register("hait.form.field.SelectField");</li>
+		</ul>
+	</li>
+	<li>hait.resource(path)	 获取JS资源文件，如果该文件存在于缓存中，那么直接从缓存读取
+		<ul>
+			<li>例如：hait.resource("../../../plugins/wdtree/jquery.tree.js");</li>
+		</ul>
+	</li>
+	<li>hait.getCompById(id) 根据编号获取已经生成的hait组件</li>
+	<li>hait.getCompByName(name) 根据名称获取已经生成的hait组件</li>
+</ul>
+</body>
+</html>

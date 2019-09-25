@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>表单元素 - 单选框</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../../include.js"></script>
+<script type="text/javascript" src="../../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../../doc.css" />
+<script type="text/javascript">
+	$(document).ready(function() {
+		// 页面代码
+		var myradio = new hait.form.field.RadioField();
+		myradio.setParam({
+			id : "myradio1",
+			text : "测试"
+		});
+		myradio.draw();
+		$("#myradio1").append(myradio.obj);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<B>单选框</B>
+	</p>
+	<p>
+		表单元素，单选框，继承自<a href="../field.html">hait.form.Field</a>元素
+	</p>
+	<p>
+		<B>类名</B>
+	</p>
+	<p>hait.form.field.RadioField</p>
+	<p>
+		<B>属性</B>
+	</p>
+	<ul>
+		<li>id : 如果没有设置，那么系统将自动生成</li>
+		<li>name : 名称</li>
+		<li>text : 描述名称</li>
+		<li>type : 类别</li>
+		<li>defaultValue : 默认值</li>
+		<li>value : 当前值</li>
+		<li>required : 是否必须</li>
+		<li>disabled : 是否禁用</li>
+	</ul>
+	<p>
+		<B>方法</B>
+	</p>
+	<ul>
+		<li>draw() : 直接绘制该对象</li>
+		<li>getValue() : 获取值</li>
+		<li>setValue(val)	 : 设置值</li>
+		<li>isChecked() ：是否选中</li>
+		<li>setDisabled(isDisabled) : 设置禁用</li>
+		<li>validate() : 验证自身数据的方法，验证是否必须，正则表达式</li>
+		<li>reset() : 重置的基本实现</li>
+	</ul>
+	<p>
+		<B>事件</B>
+	</p>
+	<ul>
+		<li>onclick(input, checked) : 点击事件</li>
+	</ul>
+	<p>
+		<B>使用示例</B>
+	</p>
+	<p>代码1：直接在页面上书写元素（减号改为下划线使用）</p>
+	<pre class="brush:js;">
+		<input id="myradio" type="radio" hait_type="hait.form.field.RadioField" value="1" text="测试"/>
+	</pre>
+	<p>效果1：</p>
+	<span style="float: left;">&nbsp;输入框：</span>
+	<input id="myradio" type="checkbox" hait-type="hait.form.field.RadioField" value="1" text="测试" />
+	<button class="hait_button" style="margin-left: 100px" onclick="getCheckboxValue()">获取值</button>
+	<button class="hait_button" onclick="setCheckboxValue()">设置值</button>
+	<button class="hait_button" onclick="isChecked()">是否选中</button>
+	<button class="hait_button" onclick="setCheckboxDisabled(true)">设置禁用</button>
+	<button class="hait_button" onclick="setCheckboxDisabled(false)">解除禁用</button>
+	<script type="text/javascript">
+	function getCheckboxValue(){
+		alert(hait.getCompById("myradio").getValue());
+	}
+	
+	function isChecked(){
+		alert(hait.getCompById("myradio").isChecked());
+	}
+	
+	function setCheckboxValue(){
+		hait.getCompById("myradio").setValue("1");
+	}
+	
+	function setCheckboxDisabled(disabled){
+		hait.getCompById("myradio").setDisabled(disabled);
+	}
+	function checkFunc(checked){
+		alert("当前选中情况：" + checked);
+	}
+	</script>
+	<div class="cls"></div>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+		var myradio = new hait.form.field.RadioField();
+		myradio.setParam({
+			id : "myradio1",
+			text : "测试"
+		});
+		myradio.draw();
+		$("#myradio1").append(myradio.obj);
+	</pre>
+	<p>效果2：</p>
+	<span style="float: left;">&nbsp;单选框：</span>
+	<div id="myradio1"></div>
+	<div class="cls"></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<script type="text/javascript">
+	//初始化代码显示
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

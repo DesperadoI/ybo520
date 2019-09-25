@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>通用数据访问测试</title>
+<meta name="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+<script type="text/javascript" src="../../../include.js"></script>
+</head>
+<script type="text/javascript">
+	function dataSubmit() {
+		var token = $("input[name=token]").val();
+		var funcId = $("input[name=funcId]").val();
+		if(token == null){
+			alert("token不能为空，请检查！");
+			return;
+		}
+		if(funcId == null){
+			alert("funcId不能为空，请检查！");
+			return;
+		}
+		
+		var xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+		xml += "<requests>\n";
+		xml += "<global>\n";
+		xml += "<token>" + token + "</token>\n";
+		xml += "</global>\n";
+		xml += "<request>\n";
+		xml += "<funcId>" + funcId + "</funcId>\n";
+		$("tr.params").each(function() {
+			var paramName = $(this).find("input[name=param_name]").val();
+			var paramVal = $(this).find("input[name=param_value]").val();
+			xml += "<" + paramName + ">" + paramVal + "</" + paramName + ">\n";
+		});
+		xml += "</request>\n";
+		xml += "</requests>";
+		alert(xml);
+		
+		$.ajax({
+			url : "/common/data.do",
+			type : "POST",
+			data : xml,
+			success : function(data, textStatus, jqXHR) {
+				alert(data);
+			}
+		});
+	}
+
+	function addParam() {
+		var tr = $("<tr class=\"params\"></tr>");
+		var param = $("<td><div class=\"param\"><input type=\"text\" name=\"param_name\"/>&nbsp;:&nbsp;<input type=\"text\" name=\"param_value\"/></div></td>");
+		var button = $("<td><input type=\"button\" value=\"删除\"/></td>");
+		button.find("input").click(function() {
+			// 删除自身
+			$(this).parent().parent().remove();
+			// 重新计算参数列表
+			$("tr.params").each(function(index) {
+				$(this).find("td").get(0).innerHTML = "参数" + (index + 1) + "：";
+			});
+		});
+		tr.append("<td>参数" + ($("table").find("tr").size() - 1) + "：</td>");
+		tr.append(param);
+		tr.append(button);
+		$("table").append(tr);
+	}
+	
+	function sendSMS(){
+		var token = $("input[name=token]").val();
+		if(token == null){
+			alert("token不能为空，请检查！");
+			return;
+		}
+		window.open("/common/validate_code.do?token=" + token);
+	}
+</script>
+<style>
+body {
+	padding: 20px;
+}
+</style>
+<body>
+	<table>
+		<tr>
+			<td>token：</td>
+			<td colspan="2"><input type="text" name="token" style="width: 268px;" value="662b43ff3c189aeed7fdab0d7dfad2402707457c7823f893bef1e2591c4f6ce628826887e0365f430db2bcef81db7fc5"/></td>
+		</tr>
+		<tr>
+			<td>功能号：</td>
+			<td colspan="2"><input type="text" name="funcId" style="width: 268px;" value="hex_sys_dicts"/></td>
+		</tr>
+		<tr class="params">
+			<td>参数1：</td>
+			<td>
+				<div class="param">
+					<input type="text" name="param_name" value="operate"/>&nbsp;:&nbsp;<input type="text" name="param_value" value="query_all"/>
+				</div>
+			</td>
+			<td><input type="button" value="增加" onclick="addParam()" /></td>
+		</tr>
+	</table>
+	<input type="button" value="提交" onclick="dataSubmit()" />
+	<input type="button" value="验证码" onclick="sendSMS()" />
+</body>
+</html>

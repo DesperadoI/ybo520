@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>表单元素 - 复选框Checkbox</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../../include.js"></script>
+<script type="text/javascript" src="../../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../../doc.css" />
+<script type="text/javascript">
+	$(document).ready(function() {
+		// 页面代码
+		var mycheckbox = new hait.form.field.CheckboxField();
+		mycheckbox.setParam({
+			id : "mycheckbox1",
+			text : "测试"
+		});
+		mycheckbox.draw();
+		$("#mycheckbox1").append(mycheckbox.obj);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<B>复选框Checkbox</B>
+	</p>
+	<p>
+		表单元素，复选框Checkbox，继承自<a href="../field.html">hait.form.Field</a>元素
+	</p>
+	<p>
+		<B>类名</B>
+	</p>
+	<p>hait.form.field.CheckboxField</p>
+	<p>
+		<B>属性</B>
+	</p>
+	<ul>
+		<li>id : 如果没有设置，那么系统将自动生成</li>
+		<li>name : 名称</li>
+		<li>text : 描述名称</li>
+		<li>type : 类别</li>
+		<li>defaultValue : 默认值</li>
+		<li>value : 当前值</li>
+		<li>required : 是否必须</li>
+		<li>disabled : 是否禁用</li>
+	</ul>
+	<p>
+		<B>方法</B>
+	</p>
+	<ul>
+		<li>draw() : 直接绘制该对象</li>
+		<li>getValue() : 获取值</li>
+		<li>setValue(val)	 : 设置值</li>
+		<li>isChecked() ：是否选中</li>
+		<li>setDisabled(isDisabled) : 设置禁用</li>
+		<li>validate() : 验证自身数据的方法，验证是否必须，正则表达式</li>
+		<li>reset() : 重置的基本实现</li>
+	</ul>
+	<p>
+		<B>事件</B>
+	</p>
+	<ul>
+		<li>onclick(input, checked) : 点击事件</li>
+	</ul>
+	<p>
+		<B>使用示例</B>
+	</p>
+	<p>代码1：直接在页面上书写元素（减号改为下划线使用）</p>
+	<pre class="brush:js;">
+		<input id="mycheckbox" type="checkbox" hait_type="hait.form.field.CheckboxField" value="1" text="测试"/>
+	</pre>
+	<p>效果1：</p>
+	<span style="float: left;">&nbsp;输入框：</span>
+	<input id="mycheckbox" type="checkbox" hait-type="hait.form.field.CheckboxField" value="1" text="测试"/>
+	<button class="hait_button" style="margin-left: 100px" onclick="getCheckboxValue()">获取值</button>
+	<button class="hait_button" onclick="setCheckboxValue()">设置值</button>
+	<button class="hait_button" onclick="isChecked()">是否选中</button>
+	<button class="hait_button" onclick="setCheckboxDisabled(true)">设置禁用</button>
+	<button class="hait_button" onclick="setCheckboxDisabled(false)">解除禁用</button>
+	<script type="text/javascript">
+	function getCheckboxValue(){
+		alert(hait.getCompById("mycheckbox").getValue());
+	}
+	
+	function isChecked(){
+		alert(hait.getCompById("mycheckbox").isChecked());
+	}
+	
+	function setCheckboxValue(){
+		hait.getCompById("mycheckbox").setValue("1");
+	}
+	
+	function setCheckboxDisabled(disabled){
+		hait.getCompById("mycheckbox").setDisabled(disabled);
+	}
+	
+	function checkFunc(checked){
+		alert("当前选中情况：" + checked);
+	}
+	</script>
+	<div class="cls"></div>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+		var mycheckbox = new hait.form.field.CheckboxField();
+		mycheckbox.setParam({
+			id : "mycheckbox1",
+			text : "测试"
+		});
+		mycheckbox.draw();
+		$("#mycheckbox1").append(mycheckbox.obj);
+	</pre>
+	<p>效果2：</p>
+	<span style="float: left;">&nbsp;输入框：</span>
+	<div id="mycheckbox1"></div>
+	<div class="cls"></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<script type="text/javascript">
+	//初始化代码显示
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

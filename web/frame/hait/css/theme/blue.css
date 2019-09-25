@@ -1,0 +1,62 @@
+/*深蓝主题*/
+
+/*主界面的改变*/
+.top-container .logo {
+    background-color: #123455;
+}
+
+.top-container td {
+    height: 50px;
+    background-color: #18446e;
+}
+
+.top-container .line {
+	background-color: #123455;
+}
+
+.first-nav .selected {
+    background-color: #18446e;
+}
+
+.title-bar .title {
+    border-left: 2px solid #18446e;
+}
+
+/*按钮的改变*/
+.hait-button.stress {
+    color: white;
+    border: 1px solid #123455;
+    background-color: #123455;
+}
+
+.hait-button.stress:hover {
+    background-color: #18446e;
+}
+
+/*表格页数*/
+.hait-table-bottom .pagination-bar ul.pagination-num li.selected {
+    background-color: #18446e;
+    color: white;
+}
+
+.hait-tab .hait-tab-title .selected {
+    border-top: 2px solid #18446e;
+}
+
+/*表格选中*/
+.hait-table tbody tr.selected td {
+	background-color: #18446e;
+	color: white;
+}
+
+/*首页Tab栏区别样式*/
+.tab-button-container {
+	height: 37px;
+	border-bottom: 3px solid #15466f;
+	margin-left: 5px;
+}
+
+.tab-button-container .selected {
+	background-color: #15466f;
+	color: white;
+}

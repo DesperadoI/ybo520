@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<!-- 上传文件 -->
+	<bean id="upload.uploadImgAction" type="action" action="/upload_img/data.do" class="com.cffc.manage.action.UploadImgAction" />
+</beans>

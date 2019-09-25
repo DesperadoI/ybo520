@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>树形组件</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../../include.js"></script>
+    <script type="text/javascript" src="../../../plugins/highlighter/include.js"></script>
+    <link rel="stylesheet" href="../doc.css"/>
+    <script type="text/javascript">
+
+        hait.register("hait.tree.Tree");
+
+        $(document).ready(function () {
+            //初始化代码显示
+            SyntaxHighlighter.all();
+
+            var mytree = new hait.tree.Tree();
+            mytree.setParam({
+                multiple: true,
+                data: [{
+                    name: "父节点1",
+                    children: [{
+                        name: "节点11"
+                    }, {
+                        name: "节点12"
+                    }]
+                }, {
+                    name: "父节点2"
+                }]
+            });
+            mytree.draw();
+            $("#mytree2").append(mytree.obj);
+        });
+
+        function zTreeOnClick(tree, treeId, treeNode) {
+            alert(tree + ", " + treeNode.tId + ", " + treeNode.name);
+        }
+        ;
+    </script>
+</head>
+<body>
+<p>
+    <B>树形组件</B>
+</p>
+<p>
+    树形组件，用于将ul标签转换为树形组件
+</p>
+<p>
+    <B>类名</B>
+</p>
+<p>hait.tree.Tree</p>
+<p>
+    <B>属性</B>
+</p>
+<ul>
+    <li>multiple : 是否为复选</li>
+    <li>mode : 数据来源模式，包括local，func</li>
+    <li>data : 原始数据</li>
+    <li>attrs : mode为local中，使用这里约定的属性获取数据,默认有:"text", "value", "url", "target", "click", "icon", "path"</li>
+    <li>server : 目标服务器地址，默认可不设置，可写值：CUSTOMER_SERVER，DRIVER_SERVER</li>
+    <li>funcId : 功能编号</li>
+    <li>params : 参数</li>
+    <li>parentId : 父级项</li>
+    <li>isLeaf : 是否枝叶项</li>
+    <li>text : 显示列项</li>
+    <li>idName : 列编号名称</li>
+    <li>auto : 是否自动获取数据，默认true</li>
+    <li>cache : 是否使用缓存，就是每次查询的数据会自动缓存</li>
+</ul>
+<p>
+    <B>事件</B>
+</p>
+<ul>
+    <li>onclick : 节点点击事件</li>
+    <li>oncheck : 复选框点击事件</li>
+    <li>onrefresh : 完成刷新后的事件</li>
+    <li>onload : 完成载入后的事件</li>
+</ul>
+<p>
+    <B>方法</B>
+</p>
+<ul>
+    <li>getTree() : 获得内部的ztree对象</li>
+    <li>draw() : 直接绘制该对象</li>
+    <li>refresh() : 刷新数据，应用于联动的情况</li>
+</ul>
+<p>
+    <B>使用示例</B>
+</p>
+<p>代码1：直接在页面上书写元素（下划线改为减号使用）</p>
+	<pre class="brush:js;">
+		<ul id="mytree1" hait_type="hait.tree.Tree" mode="local" onclick="zTreeOnClick">
+            <div text="父节点1">
+                <div text="子节点11">
+                    <div text="子节点111"></div>
+                    <div text="子节点112"></div>
+                </div>
+                <div text="子节点12"></div>
+            </div>
+            <div text="父节点2">
+                <div text="子节点21"></div>
+                <div text="子节点22"></div>
+            </div>
+        </ul>
+	</pre>
+<p>效果1：</p>
+
+<ul id="mytree1" hait-type="hait.tree.Tree" mode="local" onclick="zTreeOnClick" style="border:1px dashed black">
+    <div text="父节点1">
+        <div text="子节点11">
+            <div text="子节点111"></div>
+            <div text="子节点112"></div>
+        </div>
+        <div text="子节点12"></div>
+    </div>
+    <div text="父节点2">
+        <div text="子节点21"></div>
+        <div text="子节点22"></div>
+    </div>
+</ul>
+<div class="cls"></div>
+<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+	var mytree = new hait.tree.Tree();
+	mytree.setParam({
+		multiple : true,
+		data : [ {
+			name : "父节点1",
+			children : [ {
+				name : "节点11"
+			}, {
+				name : "节点12"
+			} ]
+		}, {
+			name : "父节点2"
+		} ]
+	});
+	mytree.draw();
+	$("#mytree2").append(mytree.obj);
+	</pre>
+<p>效果2：</p>
+<div id="mytree2" style="border:1px dashed black"></div>
+<div class="cls"></div>
+<p>代码3：代码编写（远程数据情况）</p>
+	<pre class="brush:js;">
+	<ul id="dataTree" hait_type="hait.tree.Tree" mode="func" func-id="hex_frame_tree_test" params="operate:'query_all'"
+        id-name="menu_id" text="menu_name">
+    </ul>
+	</pre>
+<div class="cls"></div>
+<p>效果3：</p>
+<ul id="dataTree" hait-type="hait.tree.Tree" mode="func" func-id="hex_frame_tree_test" params="operate:'query_all'"
+    id-name="menu_id" text="menu_name">
+</ul>
+<p>代码4：代码编写（远程数据情况）</p>
+	<pre class="brush:js;">
+	var dataTree2 = new hait.tree.Tree();
+	dataTree2.setParam({
+		id : "dataTree2",
+		mode : "func",
+		funcId : "hex_sys_menus",
+		params : {
+			operate:"query_all"
+		},
+		idName : "menu_id",
+		text : "menu_name"
+	});
+	dataTree2.draw();
+	$("#dataTree2").append(dataTree2.obj);
+	</pre>
+<div class="cls"></div>
+<br> <br> <br> <br> <br> <br>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>对话框</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../include.js"></script>
+<script type="text/javascript" src="../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../doc.css" />
+<script type="text/javascript">
+	//导入需要的类
+	hait.register("hait.dialog.Dialog");
+	
+	var dialog;
+	$(document).ready(function(){
+		
+		dialog = new hait.dialog.Dialog();
+		dialog.setParam({
+			id : "mydialog",
+			body : $("<span>内容展示</span>")
+		});
+		dialog.draw();
+	});
+	
+	function show1(){
+		hait.getCompById("targetDialogMore").show();
+	}
+	
+	function show2(){
+		dialog.show();
+	}
+</script>
+</head>
+<body>
+	<p><B>对话框</B></p>
+	<p>用于生成一个对话框，内部可以嵌任何东西</p>
+	<p><B>类名</B></p>
+	<p>hait.dialog.Dialog</p>
+	<p><B>属性</B></p>
+	<ul>
+		<li>id : 对话框编号</li>
+		<li>title : 对话框标题</li>
+		<li>style : 附加样式</li>
+		<li>body : 对话框内容，可以是任何对象</li>
+		<li>isMask : 是否存在遮罩层</li>
+		<li>buttons : 对话框按钮栏，可以没有</li>
+	</ul>
+	<p><B>方法</B></p>
+	<ul>
+		<li>draw() : 绘制对象</li>
+		<li>show() : 展示对话框</li>
+		<li>hide()	 : 隐藏对话框</li>
+		<li>isDisplay()	 : 返回是否展示着</li>
+		<li>remove() : 删除该对话框</li>
+		<li>setTitle(title) : 设置对话框标题</li>
+	</ul>
+	<p><B>事件</B></p>
+	<ul>
+		<li>onafterclose : 关闭按钮点击后调用的事件</li>
+	</ul>
+	<p><B>使用示例</B></p>
+	<p>代码1：直接在页面上书写元素（减号改为下划线使用）</p>
+	<pre class="brush:js;">
+		<div id="targetDialogMore" hait_type="hait.dialog.Dialog" title="测试对话框">
+			<div>我是一个对话框的内容</div>
+			<div class="buttons">
+				<button>关闭</button>
+				<button stress="true">按钮1</button>
+			</div>
+		</div>
+	</pre>
+	<p>效果1：</p>
+	<div id="targetDialogMore" hait-type="hait.dialog.Dialog" title="测试对话框">
+		<div>我是一个对话框的内容</div>
+		<div class="buttons">
+			<button>关闭</button>
+			<button stress="true">按钮1</button>
+		</div>
+	</div>
+	<button class="hait-button button-icon icon-black-date" onclick="show1()">对话框1</button>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+		var dialog = new hait.dialog.Dialog();
+		dialog.setParam({
+			id : "mydialog",
+			body : $("<span>内容展示</span>")
+		});
+		dialog.draw();
+	</pre>
+	<p>效果2：</p>
+	<button onclick="show2()" class="hait-button">对话框2</button>
+	<br> <br> <br> <br> <br> <br>
+	<script type="text/javascript">
+	//初始化代码显示
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

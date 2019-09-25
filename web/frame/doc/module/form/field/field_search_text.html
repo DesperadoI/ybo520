@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>表单元素 - 查询输入框</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../../include.js"></script>
+<script type="text/javascript" src="../../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../../doc.css" />
+<script type="text/javascript">
+	hait.register("hait.form.field.SearchTextField");
+	$(document).ready(function() {
+		// 页面代码
+		var input = new hait.form.field.SearchTextField();
+		input.setParam({
+			funcId : "hex_frame_func_test",
+			optionValue:"item_name"
+		});
+		input.draw();
+		$("#myinput1").append(input.obj);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<B>查询输入框</B>
+	</p>
+	<p>
+		表单元素，查询输入框，在输入数据的同时查询后台数据
+	</p>
+	<p>
+		<B>类名</B>
+	</p>
+	<p>hait.form.field.SearchTextField</p>
+	<p>
+		<B>属性</B>
+	</p>
+	<ul>
+		<li>id : 如果没有设置，那么系统将自动生成</li>
+		<li>name : 名称</li>
+		<li>text : 描述名称</li>
+		<li>type : 类别</li>
+		<li>defaultValue : 默认值</li>
+		<li>value : 当前值</li>
+		<li>placeholder : 占位符</li>
+		<li>required : 是否必须</li>
+		<li>disabled : 是否禁用</li>
+		<li>readonly : 是否只读</li>
+		<li>pattern : 正则表达式</li>
+		<li>patternMessage : 当正则表达式没有验证通过时显示的提示</li>
+		<li>style : 最外层的样式设置</li>
+		<li>mode : 数据来源模式，包括func,url，默认为func</li>
+		<li>options : 下拉选项值数组</li>
+		<li>server : 目标服务器地址，默认可不设置，可写值：CUSTOMER_SERVER，DRIVER_SERVER</li>
+		<li>funcId : 功能编号</li>
+		<li>params : 参数</li>
+		<li>optionValue : 值列项</li>
+		<li>auto : 是否自动获取数据，默认true</li>
+		<li>search : 查询字段，默认为optionText</li>
+		<li>searchStart : 当输入框内的内容达到此长度时，才进行查询，默认为1</li>
+	</ul>
+	<p>
+		<B>方法</B>
+	</p>
+	<ul>
+		<li>draw() : 直接绘制该对象</li>
+		<li>getValue() : 获取值</li>
+		<li>getDisplayValue() : 获取显示的值</li>
+		<li>setValue(val)	 : 设置值</li>
+		<li>setDisabled(isDisabled) : 设置禁用</li>
+		<li>setReadonly(isReadonly) : 设置只读</li>
+		<li>validate() : 验证自身数据的方法，验证是否必须，正则表达式</li>
+		<li>reset() : 重置的基本实现</li>
+	</ul>
+	<p>
+		<B>事件</B>
+	</p>
+	<ul>
+		<li>onchange(input,prevValue,curValue,option) :当选择变化的时候</li>
+		<li>onrefresh() : 完成刷新后执行的事件</li>
+		<li>onload(input) : 当数据获取完毕时执行的事件</li>
+		<li>onparam(input,val) : 当拼装查询参数时执行的事件</li>
+	</ul>
+	<p>
+		<B>使用示例</B>
+	</p>
+	<p>代码1：直接在页面上书写元素（下划线改为减号使用）</p>
+	<pre class="brush:js;">
+		<input name="myinput" hait_type="hait.form.field.SearchTextField" placeholder="请输入..." func-id="hex_frame_func_test" option-value="item_name" search-start="4" required="true"/>
+	</pre>
+	<p>效果1：</p>
+    <div class="cls"></div>
+	<input name="myinput" hait-type="hait.form.field.SearchTextField" placeholder="请输入..." func-id="hex_frame_func_test" option-value="item_name" search-start="4" required="true"/>
+	<div class="cls"></div>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+	var input = new hait.form.field.SearchTextField();
+	input.setParam({
+		funcId : "hex_frame_func_test",
+		optionValue:"item_name"
+	});
+	input.draw();
+	$("#myinput1").append(input.obj);
+	</pre>
+	<p>效果2：</p>
+    <div class="cls"></div>
+	<div id="myinput1">
+    </div>
+	<div class="cls"></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<script type="text/javascript">
+	//初始化代码显示
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

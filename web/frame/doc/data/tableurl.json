@@ -1,0 +1,50 @@
+{
+  "global": {
+    "flag": 1,
+    "message": "success"
+  },
+  "responses": [
+    {
+      "flag": 1,
+      "items": [
+        {
+          "ico_color": "#FFB220",
+          "index_type_id": "1310532925291520",
+          "sort": "1",
+          "type_ico": {
+            "media_id": "1310532807195648",
+            "media_url": "http://www.hp125.cn/upload/1063129018694656/image/2015/1310532807179264.png"
+          },
+          "type_name": "水泥"
+        },
+        {
+          "ico_color": "#56B1EA",
+          "index_type_id": "1310533680036864",
+          "sort": "2",
+          "type_ico": {
+            "media_id": "1310533588728833",
+            "media_url": "http://www.hp125.cn/upload/1063129018694656/image/2015/1310533588728832.png"
+          },
+          "type_name": "钢材"
+        },
+        {
+          "ico_color": "#76BD3D",
+          "index_type_id": "1353368399723520",
+          "sort": "3",
+          "type_ico": {},
+          "type_name": "管材"
+        },
+        {
+          "ico_color": "#8D85EE",
+          "index_type_id": "1373528875465728",
+          "sort": "4",
+          "type_ico": {},
+          "type_name": "混凝土"
+        }
+      ],
+      "length": 4,
+      "message": "success",
+      "total": 200
+    }
+  ]
+}

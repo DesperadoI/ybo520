@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>表单元素 - 单复选下拉列表</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../../include.js"></script>
+<script type="text/javascript" src="../../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../../doc.css" />
+<script type="text/javascript">
+	hait.register("hait.form.field.SelectField");
+	$(document).ready(function() {
+		// 页面代码
+		var select = new hait.form.field.SelectField();
+		select.setParam({
+			defaultValue : "id",
+			options : [ {
+				text : "编号",
+				val : "id"
+			}, {
+				text : "名称",
+				val : "name"
+			} ]
+		});
+		select.draw();
+		$("#myselect1").append(select.obj);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<B>下拉列表</B>
+	</p>
+	<p>
+		表单元素，下拉列表，支持单复选，继承自<a href="../field.html">hait.form.Field</a>元素
+	</p>
+	<p>
+		<B>类名</B>
+	</p>
+	<p>hait.form.field.SelectField</p>
+	<p>
+		<B>属性</B>
+	</p>
+	<ul>
+		<li>id : 如果没有设置，那么系统将自动生成</li>
+		<li>name : 名称</li>
+		<li>text : 描述名称</li>
+		<li>type : 类别</li>
+		<li>defaultValue : 默认值</li>
+		<li>value : 当前值</li>
+		<li>placeholder : 占位符</li>
+		<li>required : 是否必须</li>
+		<li>disabled : 是否禁用</li>
+		<li>readonly : 是否只读</li>
+		<li>pattern : 正则表达式</li>
+		<li>patternMessage : 当正则表达式没有验证通过时显示的提示</li>
+		<li>style : 最外层的样式设置</li>
+		<li>multiple : 是否为复选</li>
+		<li>displayValue : 显示的值</li>
+		<li>mode : 数据来源模式，包括local，dict，func</li>
+		<li>options : 下拉选项值数组，由显示text和值val构成</li>
+		<li>dict : mode为dect时的相关参数</li>
+		<li>server : 目标服务器地址，默认可不设置，可写值：CUSTOMER_SERVER，DRIVER_SERVER</li>
+		<li>funcId : 功能编号</li>
+		<li>params : 参数</li>
+		<li>optionValue : 值列项</li>
+		<li>optionText : 显示列项</li>
+		<li>auto : 是否自动获取数据，默认true</li>
+		<li>cache : 是否使用缓存，就是每次查询的数据会自动缓存</li>
+		<li>addQueryAll : 是否添加“全部”查询项，值为0</li>
+	</ul>
+	<p>
+		<B>方法</B>
+	</p>
+	<ul>
+		<li>draw() : 直接绘制该对象</li>
+		<li>getValue() : 获取值</li>
+		<li>getDisplayValue() : 获取显示的值</li>
+		<li>setValue(val)	 : 设置值</li>
+		<li>setDisabled(isDisabled) : 设置禁用</li>
+		<li>setReadonly(isReadonly) : 设置只读</li>
+		<li>validate() : 验证自身数据的方法，验证是否必须，正则表达式</li>
+		<li>reset() : 重置的基本实现</li>
+		<li>refresh() : 刷新数据，应用于联动的情况</li>
+	</ul>
+	<p>
+		<B>事件</B>
+	</p>
+	<ul>
+		<li>onchange(select,prevValue,curValue,option) :当选择变化的时候，option在单选时才有值</li>
+		<li>onrefresh() : 完成刷新后执行的事件</li>
+		<li>onload() : 当数据获取完毕的时候</li>
+	</ul>
+	<p>
+		<B>使用示例</B>
+	</p>
+	<p>代码1：直接在页面上书写元素（下划线改为减号使用）</p>
+	<pre class="brush:js;">
+		<select name="myselect" hait_type="hait.form.field.SelectField" multiple="multiple" add-query-all="true">
+	    	<option value="id">编号</option>
+	    	<option value="name">名称</option>
+	    </select>
+	</pre>
+	<p>效果1：</p>
+    <div class="cls"></div>
+	<select name="myselect" hait-type="hait.form.field.SelectField" multiple="multiple" add-query-all="true">
+		<option value="id">编号</option>
+		<option value="name">名称</option>
+	</select>
+	<div class="cls"></div>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+	var select = new hait.form.field.SelectField();
+	select.setParam({
+		defaultValue : "id",
+		options : [ {
+			text : "编号",
+			val : "id"
+		}, {
+			text : "名称",
+			val : "name"
+		} ]
+	});
+	select.draw();
+	$("#myselect1").append(select.obj);
+	</pre>
+	<p>效果2：</p>
+    <div class="cls"></div>
+	<div id="myselect1">
+    </div>
+	<div class="cls"></div>
+	<p>代码3：从远程FUNC获取数据</p>
+	<pre class="brush:js;">
+		<select id="searchDict" placeholder="请选择..." hait_type="hait.form.field.SelectField" mode="func" func-id="hex_frame_func_test" params="operate:'query_all'"
+                option-value="item_val" option-text="item_name"></select>
+	</pre>
+    <p>效果3：</p>
+    <div class="cls"></div>
+    <select id="searchDict" placeholder="请选择..." hait-type="hait.form.field.SelectField" mode="func" func-id="hex_frame_func_test" params="operate:'query_all'"
+            option-value="item_val" option-text="item_name"></select>
+    <div class="cls"></div>
+    <p>代码4：从远程URL获取数据</p>
+	<pre class="brush:js;">
+		<select id="searchDict" placeholder="请选择..." hait_type="hait.form.field.SelectField" mode="url" url="../../../data/tableurl.json" params="operate:'query_all'"
+                option-value="index_type_id" option-text="type_name"></select>
+	</pre>
+    <p>效果4：</p>
+    <div class="cls"></div>
+    <select id="searchDict" placeholder="请选择..." hait-type="hait.form.field.SelectField" mode="url" url="../../../data/tableurl.json" params="operate:'query_all'"
+            option-value="index_type_id" option-text="type_name"></select>
+    <div class="cls"></div>
+	<p>代码5：从数据字典获取数据</p>
+	<pre class="brush:js;">
+		<select name="state" placeholder="请选择..." hait_type="hait.form.field.SelectField" mode="dict" dict="YES_NO">
+		</select>
+	</pre>
+	<div class="cls"></div>
+    <p>效果5：</p>
+    <div class="cls"></div>
+        <select name="state" hait-type="hait.form.field.SelectField" mode="dict" dict="YES_NO"></select>
+    <div class="cls"></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<script type="text/javascript">
+	//初始化代码显示
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

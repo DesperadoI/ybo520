@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  	<session-config>
+		<session-timeout>180</session-timeout>
+	</session-config>
+	
+	<!-- 设置Hait6.0需要的全局变量 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/hait/hait-core.xml
+			/WEB-INF/project/common.xml
+		</param-value>
+	</context-param>
+	
+	<!-- 设置网站目录 -->
+	<context-param>
+		<param-name>weiSiteName</param-name>
+		<param-value>/ybo520</param-value>
+	</context-param>
+
+	<!-- 启动Hait6.0 -->
+	<listener>
+		<listener-class>com.haitsoft.framework.core.listener.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Hait6.0-字符集过滤器 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>com.haitsoft.framework.core.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- Hait6.0-Web入口 -->
+	<servlet>
+		<servlet-name>dispatcherServlet</servlet-name>
+		<servlet-class>com.haitsoft.framework.core.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcherServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+</web-app>

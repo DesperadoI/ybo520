@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>数据操作 - JDBC基础操作</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../include.js"></script>
+<script type="text/javascript" src="../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../doc.css" />
+<script type="text/javascript">
+	$(document).ready(function() {
+		//初始化代码显示
+		SyntaxHighlighter.all();
+	});
+
+	function execute1() {
+		request({
+			data : [ {
+				funcId : "hex_doc_sys_dicts_query",
+				start : 0,
+				limit : 5
+				
+			} ],
+			func : function(data) {
+				alert(JSON.stringify(data));
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<p>
+		<B>JDBC基础操作</B>
+	</p>
+	<p>JDBC基础操作，此处演示在配置文件中进行基本JDBC操作的配置示例</p>
+	<p>
+		<B>操作示例</B>
+	</p>
+	<p>元数据配置：</p>
+	<pre class="brush:js;">
+		<hex id="hex_doc_sys_dicts_query" name="分页查询数据库" type="jdbc" operate="query" table="t_sys_dicts">
+			<param name="dict_id" type="int" />
+			<param name="dict_name" type="varchar" like="true" />
+		</hex>
+	</pre>
+	<p>hex属性</p>
+	<ul>
+		<li>id : 该hex在系统中的唯一编号，如果存在两个编号，那么新编号将冲掉旧编号</li>
+		<li>type : 该hex的类别，目前有jdbc,sql两种</li>
+		<li>operate : 本次操作的名称，在JDBC基本操作方面方面有insert,update,delete,query,query_all,sql_update,sql_query,sql_query_all</li>
+		<li>table : 对应的数据库表名</li>
+		<li>order : 排序方式，例如dict_id desc，也在参数中设置table_order_by关键字属性进行设置，如果两者都有，已table_order_by为准</li>
+		<li>query_by_cache : 是否缓存，true，false</li>
+		<li>cache_timeout : 缓存时间（秒）</li>
+	</ul>
+	<p>param属性</p>
+	<ul>
+		<li>name : 和数据库对应的字段名称</li>
+		<li>type : 和数据对应的类别，在JDBC基本操作方面有 md5,encrypt,session,between,emoji
+			<ul>
+				<li>md5 : 该参数自动MD5加密保存</li>
+				<li>encrypt : 该参数自动加密保存</li>
+				<li>session : 该参数的值从session中获取，属性值在null_value中设置</li>
+				<li>emoji : 该参数自动进行表情转换</li>
+				<li>between : 该参数是一个区间判断，通过在参数名后增加_start,_end后缀进行判断，例如op_time_start,op_time_end</li>
+			</ul>
+		</li>
+		<li>null_value : 当该参数传入值为空时的值</li>
+		<li>primary : 是否为主键，主要用于update操作时，该列值将作为where条件</li>
+		<li>like : 该参数作为where条件时，是否使用like</li>
+	</ul>
+	<p><b>查询数据操作：</b></p>
+	<pre class="brush:js;">
+		request({
+			data : [ {
+				funcId : "hex_doc_sys_dicts_query",
+				start : 0,
+				limit : 5
+			} ],
+			func : function(data) {
+				alert(JSON.stringify(data));
+			}
+		});
+	</pre>
+	<button class="hait_button" onclick="execute1()">查询数据操作</button>
+</body>
+</html>

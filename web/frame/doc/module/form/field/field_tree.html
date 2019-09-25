@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>表单元素 - 树形单复选下拉列表</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../../include.js"></script>
+<script type="text/javascript" src="../../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../../doc.css" />
+<script type="text/javascript">
+    hait.register("hait.form.field.TreeField");
+	$(document).ready(function() {
+		var select = new hait.form.field.TreeField();
+		select.setParam({
+			multiple : true,
+			mode : "local",
+			data : [ 
+			    {name : "父节点1",value : "1",children : [ {name : "节点11",value : "11"}, {name : "节点12",value : "12"} ]}, 
+			    {name : "父节点2",value : "2"} 
+			]
+		});
+		select.draw();
+		$("#demoTree1").append(select.obj);;
+	});
+</script>
+</head>
+<body>
+	<p>
+		<B>树形单复选下拉列表</B>
+	</p>
+	<p>
+		表单元素，树形下拉列表，支持单复选，继承自<a href="../field.html">hait.form.Field</a>元素
+	</p>
+	<p>
+		<B>类名</B>
+	</p>
+	<p>hait.form.field.TreeField</p>
+	<p>
+		<B>属性</B>
+	</p>
+	<ul>
+		<li>id : 如果没有设置，那么系统将自动生成</li>
+		<li>name : 名称</li>
+		<li>text : 描述名称</li>
+		<li>type : 类别</li>
+		<li>defaultValue : 默认值</li>
+		<li>value : 当前值</li>
+		<li>placeholder : 占位符</li>
+		<li>required : 是否必须</li>
+		<li>disabled : 是否禁用</li>
+		<li>readonly : 是否只读</li>
+		<li>pattern : 正则表达式</li>
+		<li>patternMessage : 当正则表达式没有验证通过时显示的提示</li>
+		<li>style : 最外层的样式设置</li>
+		<li>multiple : 是否为复选</li>
+		<li>mode : 数据来源模式，包括local，func</li>
+		<li>data : 原始数据</li>
+		<li>attrs : mode为local中，使用这里约定的属性获取数据</li>
+		<li>funcId : 功能编号</li>
+		<li>params : 参数</li>
+		<li>parentId : 父级项</li>
+		<li>isLeaf : 是否枝叶项</li>
+		<li>text : 显示列项</li>
+		<li>idName : 列编号名称</li>
+		<li>auto : 是否自动获取数据，默认true</li>
+		<li>returnValue : 返回值</li>
+   		<li>cache : 是否使用缓存，就是每次查询的数据会自动缓存</li>
+	</ul>
+	<p>
+	    <B>事件</B>
+	</p>
+	<ul>
+	    <li>onchange(field,prevValue,curValue,treeNode) : 内容变更后事件</li>
+	    <li>onrefresh : 完成刷新后的事件</li>
+	</ul>
+	<p>
+		<B>方法</B>
+	</p>
+	<ul>
+		<li>draw() : 直接绘制该对象</li>
+		<li>getValue() : 获取值</li>
+		<li>getDisplayValue() : 获取展示值</li>
+		<li>setValue(val)	 : 设置值</li>
+		<li>setDisabled(isDisabled) : 设置禁用</li>
+		<li>setReadonly(isReadonly) : 设置只读</li>
+		<li>validate() : 验证自身数据的方法，验证是否必须，正则表达式</li>
+		<li>reset() : 重置的基本实现</li>
+		<li>refresh() : 刷新数据，应用于联动的情况</li>
+	</ul>
+	<p>
+		<B>使用示例</B>
+	</p>
+	<p>代码1：直接在页面上书写元素（减号改为下划线使用）</p>
+	<pre class="brush:js;">
+		<select name="demoTree" hait_type="hait.form.field.TreeField" data="treeData" multiple="multiple" default-value="1">
+        </select>
+		<div id="treeDataDemo">
+			<div text="父节点1" value="1">
+				<div text="子节点11" value="11">
+					<div text="子节点111" value="111"></div>
+					<div text="子节点112" value="112"></div>
+				</div>
+				<div text="子节点12" value="12"></div>
+			</div>
+			<div text="父节点2" value="2">
+				<div text="子节点21" value="21"></div>
+				<div text="子节点22" value="22"></div>
+			</div>
+		</div>
+	</pre>
+	<p>效果1：</p>
+	<span style="float: left;">&nbsp;树形下拉框：</span>
+    <div class="cls"></div>
+	<select name="demoTree" hait-type="hait.form.field.TreeField" data="treeData" multiple="multiple" default-value="1">
+	</select>
+	<div id="treeData">
+		<div text="父节点1" value="1">
+			<div text="子节点11" value="11">
+				<div text="子节点111" value="111"></div>
+				<div text="子节点112" value="112"></div>
+			</div>
+			<div text="子节点12" value="12"></div>
+		</div>
+		<div text="父节点2" value="2">
+			<div text="子节点21" value="21"></div>
+			<div text="子节点22" value="22"></div>
+		</div>
+	</div>
+    <div class="cls"></div>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+	var select = new hait.form.field.TreeField();
+	select.setParam({
+		multiple : true,
+		mode : "local",
+		data : [
+		    {name : "父节点1",value : "1",children : [ {name : "节点11",value : "11"}, {name : "节点12",value : "12"} ]},
+		    {name : "父节点2",value : "2"}
+		]
+	});
+	select.draw();
+	$("#demoTree1").append(select.obj);;
+	</pre>
+	<p>效果2：</p>
+	<span style="float: left;">&nbsp;树形下拉框：</span>
+    <div class="cls"></div>
+    <div id="demoTree1"></div>
+    <div class="cls"></div>
+    <p>代码3：从远程获取数据</p>
+	<pre class="brush:js;">
+		<select name="demoDataTree" hait_type="hait.form.field.TreeField" mode="func" func-id="hex_frame_tree_test" params="operate:'query_all'" id-name="menu_id" text="menu_name" return-value="menu_id">
+        </select>
+	</pre>
+    <p>效果2：</p>
+    <select name="demoDataTree" hait-type="hait.form.field.TreeField" mode="func" func-id="hex_frame_tree_test" id-name="menu_id" text="menu_name" return-value="menu_id" style="width: 100px" >
+    </select>
+    <br> <br> <br> <br> <br> <br><br> <br> <br> <br> <br> <br><br> <br> <br> <br> <br> <br>
+	<script type="text/javascript">
+	//初始化代码显示
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

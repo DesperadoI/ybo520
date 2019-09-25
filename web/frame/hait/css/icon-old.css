@@ -1,0 +1,196 @@
+@CHARSET "UTF-8";
+
+.icon {
+	width: 16px;
+	height: 16px;
+}
+
+.button-icon {
+	padding-left: 30px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+}
+
+/*白色图标*/
+.icon-white-remind {
+	background-image: url("../images/icon/remind.png");
+}
+
+.icon-white-server {
+	background-image: url("../images/icon/server.png");
+}
+
+.icon-white-db {
+	background-image: url("../images/icon/db.png");
+}
+
+.icon-white-nginx {
+	background-image: url("../images/icon/nginx.png");
+}
+
+.icon-white-expand {
+	background-image: url("../images/icon/expand.png");
+}
+
+.icon-white-home {
+	background-image: url("../images/icon/home.png");
+}
+
+.icon-white-authority {
+	background-image: url("../images/icon/white/authority.png");
+}
+
+.icon-white-sysSet {
+	background-image: url("../images/icon/white/sys_set.png");
+}
+
+.icon-white-cust {
+	background-image: url("../images/icon/white/cust.png");
+}
+
+.icon-white-driver {
+	background-image: url("../images/icon/white/driver.png");
+}
+
+.icon-white-join {
+	background-image: url("../images/icon/white/join.png");
+}
+
+.icon-white-finance {
+	background-image: url("../images/icon/white/finance.png");
+}
+
+.icon-white-development {
+	background-image: url("../images/icon/white/development.png");
+}
+
+.icon-white-activity {
+	background-image: url("../images/icon/white/activity.png");
+}
+
+.icon-white-baseData {
+	background-image: url("../images/icon/white/base_data.png");
+}
+
+.icon-white-reports {
+	background-image: url("../images/icon/white/reports.png");
+}
+
+.icon-white-search {
+	background-image: url("../images/icon/white/search-white-16.png");
+}
+
+.icon-white-print {
+	background-image: url("../images/icon/white/print-white-16.png");
+}
+
+.icon-white-save {
+	background-image: url("../images/icon/white/save-white-16.png");
+}
+
+.icon-white-hand {
+	background-image: url("../images/icon/white/hand-white-16.png");
+}
+
+/*黑色图标*/
+.icon-black-security {
+	background-image: url("../images/icon/security.png");
+}
+
+.icon-black-snapshot {
+	background-image: url("../images/icon/snapshot.png");
+}
+
+.icon-black-close {
+	background-image: url("../images/icon/close-black.png");
+}
+
+.icon-black-magnifier {
+	background-image: url("../images/icon/magnifier.png");
+}
+
+.icon-black-date {
+	background-image: url("../images/icon/date.png");
+}
+
+.icon-black-tree {
+	background-image: url("../images/icon/tree.png");
+}
+
+.icon-black-search {
+	background-image: url("../images/icon/black/search-black-16.png");
+}
+
+.icon-black-print {
+	background-image: url("../images/icon/black/print-black-16.png");
+}
+
+.icon-black-save {
+	background-image: url("../images/icon/black/save-black-16.png");
+}
+
+.icon-black-hand {
+	background-image: url("../images/icon/black/hand-black-16.png");
+}
+
+/*灰色图标*/
+.icon-gray-close {
+	background-image: url("../images/icon/close-gray.png");
+}
+
+.arrow {
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	display: inline-block;
+	font-size: 1px;
+	line-height: 0;
+}
+
+.arrow-white-top {
+	border-bottom-color: white;
+}
+
+.arrow-white-down {
+	border-top-color: white;
+}
+
+.arrow-white-left {
+	border-right-color: white;
+}
+
+.arrow-white-right {
+	border-left-color: white;
+}
+
+.arrow-black-top {
+	border-bottom-color: black;
+}
+
+.arrow-black-down {
+	border-top-color: black;
+}
+
+.arrow-black-left {
+	border-right-color: black;
+}
+
+.arrow-black-right {
+	border-left-color: black;
+}
+
+.arrow-gray-top {
+	border-bottom-color: gray;
+}
+
+.arrow-gray-down {
+	border-top-color: gray;
+}
+
+.arrow-gray-left {
+	border-right-color: gray;
+}
+
+.arrow-gray-right {
+	border-left-color: gray;
+}

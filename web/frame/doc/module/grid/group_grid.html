@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>分组表格</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../include.js"></script>
+<script type="text/javascript" src="../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../doc.css" />
+<script type="text/javascript">
+
+		$(document).ready(function(){
+			//初始化代码显示
+			SyntaxHighlighter.all();
+	});
+</script>
+</head>
+<body>
+	<p><B>分组表格</B></p>
+	<p>用于生成一个分组表格，继承自hait.grid.Grid</p>
+	<p><B>类名</B></p>
+	<p>hait.grid.GroupGrid</p>
+	<p><B>属性</B></p>
+	<ul>
+		<li>和表格一致</li>
+		<li>groupField : 分组字段名称，默认为text</li>
+	</ul>
+	<p><B>事件</B></p>
+	<ul>
+		<li>和表格一致</li>
+	</ul>
+	<p><B>方法</B></p>
+	<ul>
+		<li>和表格一致</li>
+	</ul>
+	<p><B>使用示例</B></p>
+	<p>代码1：直接在页面上书写元素（下划线改为减号使用）</p>
+	<pre class="brush:js;">
+	<table id="targetGrid" style="width: 600px" hait_type="hait.grid.GroupGrid" mode="func" func-id="hex_frame_tablegroup_test" group-field="dict_name" multiple="true">
+		<tr>
+			<th field="item_id">字典编号</th>
+			<th field="item_name">字典名称</th>
+			<th field="item_val">字典取值</th>
+			<th field="item_note">字典备注</th>
+		</tr>
+	</table>
+	</pre>
+	<p>效果1：</p>
+	<table id="targetGrid" style="width: 600px" hait-type="hait.grid.GroupGrid" mode="func" func-id="hex_frame_tablegroup_test" group-field="dict_name" multiple="true">
+		<tr>
+			<th field="item_id">字典编号</th>
+			<th field="item_name" width="50%">字典名称</th>
+			<th field="item_val">字典取值</th>
+			<th field="item_note">字典备注</th>
+		</tr>
+	</table>
+	<p>分组表格对返回数据存在要求，请按照以下格式</p>
+	<pre class="brush:js;">
+	{
+  "global": {
+    "flag": 1,
+    "message": "success"
+  },
+  "responses": [
+    {
+      "flag": 1,
+      "items": [
+      	{
+      	    "dict_id": "21",
+      	    "dict_code": "CUST_STATE",
+      	    "dict_name": "客户状态",
+      	    "items" : [
+      			{
+		          "dict_id": "21",
+		          "item_id": "61",
+		          "item_name": "正在审核",
+		          "item_note": "订单正在审核",
+		          "item_sort": "1",
+		          "item_val": "1"
+		        },
+		        {
+		          "dict_id": "21",
+		          "item_id": "62",
+		          "item_name": "等待客户确认",
+		          "item_note": "",
+		          "item_sort": "2",
+		          "item_val": "2"
+		        },
+		        {
+		          "dict_id": "21",
+		          "item_id": "63",
+		          "item_name": "等待出厂",
+		          "item_note": "",
+		          "item_sort": "3",
+		          "item_val": "3"
+		        },
+		        {
+		          "dict_id": "21",
+		          "item_id": "64",
+		          "item_name": "正在运输",
+		          "item_note": "",
+		          "item_sort": "4",
+		          "item_val": "4"
+		        }]
+      	},{
+      	    "dict_id": "22",
+      	    "dict_code": "REAL_NAME_AUTH",
+      	    "dict_name": "实名验证状态",
+      	    "items" : [
+      			{
+		          "dict_id": "22",
+		          "item_id": "65",
+		          "item_name": "已实名",
+		          "item_note": "已实名",
+		          "item_sort": "1",
+		          "item_val": "1"
+		        },
+		        {
+		          "dict_id": "22",
+		          "item_id": "66",
+		          "item_name": "未实名",
+		          "item_note": "",
+		          "item_sort": "2",
+		          "item_val": "2"
+		        }]
+      	}
+      ],
+      "length": 6,
+      "message": "success",
+      "total": 6
+    }
+  ]
+}
+	</pre>
+	<br> <br> <br> <br> <br> <br>
+</body>
+</html>

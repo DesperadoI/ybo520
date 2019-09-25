@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>数据操作 - function操作</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../include.js"></script>
+<script type="text/javascript" src="../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../doc.css" />
+<script type="text/javascript">
+	$(document).ready(function() {
+		//初始化代码显示
+		SyntaxHighlighter.all();
+	});
+</script>
+</head>
+<body>
+	<p>
+		<B>FUNCTION操作</B>
+	</p>
+	<p>FUNCTION是一种将多种业务或者bex操作混合在一起，对外统一提供一个功能号的操作</p>
+	<p>
+		<B>操作示例</B>
+	</p>
+	<p>元数据配置：</p>
+	<pre class="brush:js;">
+		<hex id="hex_func_recharge" name="客户充值" type="function" operate="com.function.RechargeFunction">
+			<param name="cust_id" type="int" null_value="-1" />
+			<param name="recharge_id" type="int" null_value="" />
+			<param name="feedback" type="varchar" null_value="" />
+			<param name="operate_id" type="int" null_value="0" />
+		</hex>
+	</pre>
+	<p>type为function</p>
+	<p>operate为rechargeFunction，其中rechargeFunction为系统IOC配置中的类，如下所示</p>
+	<p>rechargeFunction类写法，如下所示</p>
+	<pre class="brush:js;">
+		public class RechargeFunction implements IFunction {
+			@Override
+			public DaoResult doFunction(Map params, Map context) throws Exception {
+				// 获取传入的参数
+				String rechargeId = params.get("recharge_id") != null ? params.get("recharge_id").toString() : null;
+				String custId = params.get("cust_id").toString();
+				String feedback = params.get("feedback") != null ? params.get("feedback").toString() : "";
+				String operateId = params.get("operate_id") != null ? params.get("operate_id").toString() : "0";
+		
+				// 定义返回对象
+				DaoResult daoResult = new DaoResult();
+			
+				// 执行很多操作...
+				
+				// 最后将结果返回
+				return daoResult;
+			}
+			@Override
+			public void doRollback(Map context) {
+			}
+		}
+	</pre>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tab选项卡组件</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../include.js"></script>
+<script type="text/javascript" src="../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../doc.css" />
+<script type="text/javascript">
+	hait.register("hait.layout.TabLayout");
+
+	var tabLayout;
+	$(document).ready(function() {
+		//初始化代码显示
+		SyntaxHighlighter.all();
+
+		tabLayout = new hait.layout.TabLayout();
+		tabLayout.setParam({
+			style : "width:400px",
+			options : [ {
+				type : "iframe",
+				text : "选项1",
+				url : "tablayout_page1.html"
+			}, {
+				type : "page",
+				text : "选项2",
+				page: $("#mytest3")
+			} ]
+		});
+		tabLayout.draw();
+		$("#mytab1").append(tabLayout.obj);
+	});
+
+	function tabChange(old, cur) {
+		alert(old.text() + "," + cur.text());
+	}
+
+	function openNewTab() {
+		tabLayout.addTab({
+			text : "选项3",
+			close : true,
+			url : "tablayout_page2.html"
+		});
+	}
+</script>
+</head>
+<body>
+	<p>
+		<B>Tab选项卡组件</B>
+	</p>
+	<p>Tab选项卡，使用Tab方式展示内容</p>
+	<p>
+		<B>类名</B>
+	</p>
+	<p>hait.layout.TabLayout</p>
+	<p>
+		<B>属性</B>
+	</p>
+	<ul>
+		<li>options : 保存所有选项卡配置数据</li>
+		<li>style : 当前样式，一般用于设置宽高</li>
+	</ul>
+	<p>
+		<B>事件</B>
+	</p>
+	<ul>
+		<li>onchange : 选项变更事件</li>
+	</ul>
+	<p>
+		<B>方法</B>
+	</p>
+	<ul>
+		<li>draw() : 直接绘制该对象</li>
+		<li>addTab(options) 添加Tab
+			<ul>
+				<li>options : Tab的属性，例如：{text:"欢迎页",url:"welcome.jsp"}</li>
+			</ul></li>
+		<li>getTab(index)：根据下标获取对应的Tab栏的dom对象，例如：tabLayout.getTab(0).src = "http://www.baidu.com";</li>
+		<li>closeTab(key)：删除对应的Tab栏 </li>
+		<li>selected(index,isIgnoreOnChange) : 根据index选中项目，isIgnoreOnChange为是否忽略变更事件</li>
+	</ul>
+	<p>
+		<B>使用示例</B>
+	</p>
+	<p>代码1：直接在页面上书写元素（减号改为下划线使用）</p>
+	<pre class="brush:js;">
+		<div id="mytab" hait_type="hait.layout.TabLayout" style="width: 400px;" onchange="tabChange()">
+			<div>
+				<button>欢迎页</button>
+				<button close="true">员工管理</button>
+			</div>
+			<div>
+				<iframe src="tablayout_page1.html"></iframe>
+				<div>选项卡内容</div>
+			</div>
+		</div>
+	</pre>
+	<p>效果1：</p>
+
+	<div id="mytab" hait-type="hait.layout.TabLayout" style="width: 400px;" onchange="tabChange()">
+		<div>
+			<button>欢迎页</button>
+			<button close="true">员工管理</button>
+		</div>
+		<div>
+			<iframe frameborder="0" src="tablayout_page1.html"></iframe>
+			<div>选项卡内容</div>
+		</div>
+	</div>
+
+	<div class="cls"></div>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+	tabLayout = new hait.layout.TabLayout();
+	tabLayout.setParam({
+		options : [ {
+			type : "iframe",
+			text : "选项1",
+			url : "tablayout_page1.html"
+		}, {
+			type : "page",
+			text : "选项2",
+			page: $("#mytest3")
+		} ]
+	});
+	tabLayout.draw();
+	$("#mytab1").append(tabLayout.obj);
+	function openNewTab() {
+		tabLayout.addTab({
+			text : "选项3",
+			close : true,
+			url : "tablayout_page2.html"
+		});
+	}
+	</pre>
+	<p>效果2：</p>
+	<button onclick="openNewTab()">增加Tab选项卡</button>
+	<br>
+	<br>
+	<div id="mytab1"></div>
+	<div id="mytest3">我是3号子内容</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</body>
+</html>

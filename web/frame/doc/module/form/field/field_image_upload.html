@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>表单元素 - 图片文件上传选择框</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../../include.js"></script>
+<script type="text/javascript" src="../../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../../doc.css" />
+<script type="text/javascript">
+	hait.register("hait.form.field.ImageUploadField");
+	$(document).ready(function() {
+		// 页面代码
+		var fileField = new hait.form.field.ImageUploadField();
+		fileField.limit = 15;
+		fileField.fileName = "test";
+		fileField.purpose = "CUST_CARD";
+		fileField.draw();
+		$("#test").append(fileField.obj);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<B>图片上传选择框</B>
+	</p>
+	<p>表单元素，图片上传选择框，继承自<a href="../field.html">hait.form.Field</a>元素</p>
+	<p>
+		<B>类名</B>
+	</p>
+	<p>hait.form.field.ImageUploadField</p>
+	<p>
+		<B>属性</B>
+	</p>
+	<ul>
+		<li>id : 如果没有设置，那么系统将自动生成</li>
+		<li>name : 名称</li>
+		<li>text : 描述名称</li>
+		<li>type : 类别</li>
+		<li>defaultValue : 默认值</li>
+		<li>value : 当前值</li>
+		<li>placeholder : 占位符</li>
+		<li>required : 是否必须</li>
+		<li>disabled : 是否禁用</li>
+		<li>readonly : 是否只读</li>
+		<li>pattern : 正则表达式</li>
+		<li>patternMessage : 当正则表达式没有验证通过时显示的提示</li>
+		<li>style : 最外层的样式设置</li>
+		<li>limit : 允许上传的文件数量</li>
+		<li>fileName : 文件名称，设置后，上传的文件会以此命名</li>
+		<li>purpose : 图片用途，重要参数，用于确定是否唯一，有效期、存放位置等多种属性</li>
+	</ul>
+	<p>
+		<B>方法</B>
+	</p>
+	<ul>
+		<li>draw() : 直接绘制该对象</li>
+		<li>getValue() : 获取值</li>
+		<li>setValue(val)	 : 设置值</li>
+		<li>setDisabled(isDisabled) : 设置禁用</li>
+		<li>setReadonly(isReadonly) : 设置只读</li>
+		<li>validate() : 验证自身数据的方法，验证是否必须，正则表达式</li>
+		<li>reset() : 重置的基本实现</li>
+	</ul>
+	<p>
+		<B>使用示例</B>
+	</p>
+	<p>代码1：直接在页面上书写元素（减号改为下划线使用）</p>
+	<pre class="brush:js;">
+		<input id="myupload" type="text" hait_type="hait.form.field.ImageUploadField" purpose="CUST_HEAD"/>
+	</pre>
+	<p>效果1：</p>
+	&nbsp;上传选择框：
+	<input id="myupload" type="text" hait-type="hait.form.field.ImageUploadField" purpose="CUST_HEAD"/>
+	<div class="cls"></div><br/>
+	<button class="hait-button" onclick="alert(hait.getCompById('myupload').getValue())">获取值</button>
+	<button class="hait-button" onclick="hait.getCompById('myupload').setValue('/test1.jpg,/test2.jpg')">设置值</button>
+	<button class="hait-button" onclick="hait.getCompById('myupload').setDisabled(true)">禁用</button>
+	<button class="hait-button" onclick="hait.getCompById('myupload').setDisabled(false)">解除禁用</button>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+	var fileField = new hait.form.field.ImageUploadField();
+	fileField.limit = 15;
+	fileField.fileName = "test";
+	fileField.purpose = "CUST_CARD";
+	fileField.draw();
+	$("#test").append(fileField.obj);
+	</pre>
+	<p>效果2：</p>
+	<span style="float: left;">&nbsp;上传选择框：</span>
+	<div class="cls"></div>
+	<div id="test" style="float: left;"></div>
+	<script type="text/javascript">
+	//初始化代码显示
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

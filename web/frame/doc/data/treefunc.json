@@ -1,0 +1,686 @@
+{
+  "global": {
+    "flag": 1,
+    "message": "success"
+  },
+  "responses": [
+    {
+      "flag": 1,
+      "items": [
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1060369391451136",
+          "menu_name": "基础信息",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1146892087114752",
+          "menu_name": "商品管理",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1196069821381632",
+          "menu_name": "客户管理",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1201317493505024",
+          "menu_name": "商户管理",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "4"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1249065811459072",
+          "menu_name": "商户订单",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "5"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1435939466312704",
+          "menu_name": "商户进货",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "6"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1435941917015040",
+          "menu_name": "商户库存",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "7"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1440132362861569",
+          "menu_name": "商户促销",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "8"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1455717171805184",
+          "menu_name": "商户报表",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "9"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1411459385179136",
+          "menu_name": "商户送货员",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "10"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1249065982753792",
+          "menu_name": "资金管理",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "11"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1325682243435520",
+          "menu_name": "报表中心",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "12"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "1440132362861571",
+          "menu_name": "促销管理",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "13"
+        },
+        {
+          "address": "#",
+          "is_display": "1",
+          "is_leaf": "0",
+          "menu_id": "98",
+          "menu_name": "系统设置",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "98"
+        },
+        {
+          "address": "#",
+          "is_display": "0",
+          "is_leaf": "0",
+          "menu_id": "99",
+          "menu_name": "公共菜单",
+          "parent_id": "0",
+          "picture": "",
+          "sort": "99"
+        },
+        {
+          "address": "/manage/pages/system/changePass.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "9801",
+          "menu_name": "修改密码",
+          "parent_id": "98",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/system/menusAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "9802",
+          "menu_name": "菜单管理",
+          "parent_id": "98",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/system/dictAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "9805",
+          "menu_name": "数据字典",
+          "parent_id": "98",
+          "picture": "",
+          "sort": "5"
+        },
+        {
+          "address": "/manage/pages/system/paramsAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "9809",
+          "menu_name": "系统参数",
+          "parent_id": "98",
+          "picture": "",
+          "sort": "9"
+        },
+        {
+          "address": "/manage/pages/system/systemSets.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "9810",
+          "menu_name": "系统设置",
+          "parent_id": "98",
+          "picture": "",
+          "sort": "10"
+        },
+        {
+          "address": "/manage/pages/system/loginHistorys.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "9815",
+          "menu_name": "登录历史",
+          "parent_id": "98",
+          "picture": "",
+          "sort": "15"
+        },
+        {
+          "address": "/manage/pages/system/taskAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "9816",
+          "menu_name": "计划任务",
+          "parent_id": "98",
+          "picture": "",
+          "sort": "16"
+        },
+        {
+          "address": "/manage/pages/system/taskHistoryAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "9817",
+          "menu_name": "任务历史",
+          "parent_id": "98",
+          "picture": "",
+          "sort": "17"
+        },
+        {
+          "address": "/manage/pages/public/customerSelect.html",
+          "is_display": "0",
+          "is_leaf": "1",
+          "menu_id": "9901",
+          "menu_name": "客户选择",
+          "parent_id": "99",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/public/employeeSelect.html",
+          "is_display": "0",
+          "is_leaf": "1",
+          "menu_id": "9902",
+          "menu_name": "员工选择",
+          "parent_id": "99",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/public/roundsmanSelect.html",
+          "is_display": "0",
+          "is_leaf": "1",
+          "menu_id": "1414576815520768",
+          "menu_name": "送货员选择",
+          "parent_id": "99",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/busi/departmentAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1060371351272448",
+          "menu_name": "部门管理",
+          "parent_id": "1060369391451136",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/busi/positionAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1060371449347072",
+          "menu_name": "职位管理",
+          "parent_id": "1060369391451136",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/busi/employeeAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1060371566377984",
+          "menu_name": "员工管理",
+          "parent_id": "1060369391451136",
+          "picture": "",
+          "sort": "4"
+        },
+        {
+          "address": "/manage/pages/busi/accessAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1060371838172160",
+          "menu_name": "权限设置",
+          "parent_id": "1060369391451136",
+          "picture": "",
+          "sort": "6"
+        },
+        {
+          "address": "/manage/pages/product/productTypeAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1183790255406080",
+          "menu_name": "类别管理",
+          "parent_id": "1146892087114752",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/product/productAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1249068608027648",
+          "menu_name": "商品管理",
+          "parent_id": "1146892087114752",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/product/productApply.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1481101859945472",
+          "menu_name": "商品变更申请",
+          "parent_id": "1146892087114752",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/product/productCheck.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1481102071790592",
+          "menu_name": "商品变更审核",
+          "parent_id": "1146892087114752",
+          "picture": "",
+          "sort": "4"
+        },
+        {
+          "address": "/manage/pages/product/providerProduct.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1481237393030144",
+          "menu_name": "商户商品关联",
+          "parent_id": "1146892087114752",
+          "picture": "",
+          "sort": "5"
+        },
+        {
+          "address": "/manage/pages/cust/customerAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1196070737607680",
+          "menu_name": "客户基本信息",
+          "parent_id": "1196069821381632",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/cust/vipLevelAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1378903998036992",
+          "menu_name": "会员等级管理",
+          "parent_id": "1196069821381632",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/prov/providerAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1201321916906496",
+          "menu_name": "商户基本信息",
+          "parent_id": "1201317493505024",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/prov/providerProduct.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1400787039992832",
+          "menu_name": "商户商品关联",
+          "parent_id": "1201317493505024",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/prov/retail/retail.jsp",
+          "is_display": "0",
+          "is_leaf": "1",
+          "menu_id": "1451349377088512",
+          "menu_name": "商户线下零售",
+          "parent_id": "1201317493505024",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/prov/base/shopState.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1455621855886336",
+          "menu_name": "商户状态变更",
+          "parent_id": "1201317493505024",
+          "picture": "",
+          "sort": "4"
+        },
+        {
+          "address": "/manage/pages/order/orderQuery.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1249071189310464",
+          "menu_name": "查看订单",
+          "parent_id": "1249065811459072",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/order/orderCheck.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1249072418126848",
+          "menu_name": "审核订单",
+          "parent_id": "1249065811459072",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/order/orderFinish.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1304094006475776",
+          "menu_name": "完成订单",
+          "parent_id": "1249065811459072",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/order/orderCancel.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1440132362861568",
+          "menu_name": "取消订单",
+          "parent_id": "1249065811459072",
+          "picture": "",
+          "sort": "4"
+        },
+        {
+          "address": "/manage/pages/finance/withdrawAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1249073356127232",
+          "menu_name": "提现申请处理",
+          "parent_id": "1249065982753792",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/finance/rechargeOffline.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1249073493031936",
+          "menu_name": "线下充值申请",
+          "parent_id": "1249065982753792",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/finance/rechargeOfflineCheck.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1249073596070912",
+          "menu_name": "线下充值审核",
+          "parent_id": "1249065982753792",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/report/rechargeReport.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1353387797756928",
+          "menu_name": "充值明细报表",
+          "parent_id": "1325682243435520",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/prov/roun/roundsmanAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1411461646826496",
+          "menu_name": "送货员管理",
+          "parent_id": "1411459385179136",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/prov/roun/roundsmanPurchase.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1459565854637056",
+          "menu_name": "送货员补货",
+          "parent_id": "1411459385179136",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/prov/roun/roundsmanStock.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1459566189018112",
+          "menu_name": "送货员库存",
+          "parent_id": "1411459385179136",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/prov/purchase/supplierAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1435939824057344",
+          "menu_name": "供货商管理",
+          "parent_id": "1435939466312704",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/prov/purchase/storehouseAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1435939962371072",
+          "menu_name": "仓库管理",
+          "parent_id": "1435939466312704",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/prov/purchase/purchaseAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1435940166171648",
+          "menu_name": "进货单管理",
+          "parent_id": "1435939466312704",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/prov/purchase/purchaseCheck.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1435940477697024",
+          "menu_name": "进货单审核",
+          "parent_id": "1435939466312704",
+          "picture": "",
+          "sort": "4"
+        },
+        {
+          "address": "/manage/pages/prov/stock/productSrockQuery.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1435942132382720",
+          "menu_name": "库存查询",
+          "parent_id": "1435941917015040",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/promotion/productPromotion.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1440132362861570",
+          "menu_name": "商品促销",
+          "parent_id": "1440132362861569",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/promotion/voucherSet.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1440132362861572",
+          "menu_name": "代金卷设置",
+          "parent_id": "1440132362861571",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/promotion/activityAdmin.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1440132362861573",
+          "menu_name": "活动管理",
+          "parent_id": "1440132362861571",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/promotion/activity2015.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1468358431915008",
+          "menu_name": "2015晚会抽奖",
+          "parent_id": "1440132362861571",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/prov/report/purchasePriceHigher.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1455706153892864",
+          "menu_name": "负毛利商品",
+          "parent_id": "1455717171805184",
+          "picture": "",
+          "sort": "1"
+        },
+        {
+          "address": "/manage/pages/prov/report/stockAlarm.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1455708611574784",
+          "menu_name": "库存报警",
+          "parent_id": "1455717171805184",
+          "picture": "",
+          "sort": "2"
+        },
+        {
+          "address": "/manage/pages/prov/report/productSaleRank.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1455711784188928",
+          "menu_name": "商品销售排行",
+          "parent_id": "1455717171805184",
+          "picture": "",
+          "sort": "3"
+        },
+        {
+          "address": "/manage/pages/prov/report/dayReport.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1455713951005696",
+          "menu_name": "日销售统计",
+          "parent_id": "1455717171805184",
+          "picture": "",
+          "sort": "4"
+        },
+        {
+          "address": "/manage/pages/prov/report/providerDayGrossMarginReport.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1460010126883840",
+          "menu_name": "日毛利统计",
+          "parent_id": "1455717171805184",
+          "picture": "",
+          "sort": "6"
+        },
+        {
+          "address": "/manage/pages/prov/report/rounDayGrossMarginReport.html",
+          "is_display": "1",
+          "is_leaf": "1",
+          "menu_id": "1459570625149952",
+          "menu_name": "送货员毛利统计",
+          "parent_id": "1455717171805184",
+          "picture": "",
+          "sort": "7"
+        }
+      ],
+      "length": 67,
+      "message": "success",
+      "total": 67
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>表单元素 - 省市区选择组件</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../../include.js"></script>
+<script type="text/javascript" src="../../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../../doc.css" />
+<script type="text/javascript">
+	hait.register("hait.form.field.ProvinceField");
+	$(document).ready(function() {
+
+		// 页面代码
+		var select = new hait.form.field.ProvinceField();
+		select.draw();
+		$("#myselect1").append(select.obj);
+	});
+	
+	function getValue(){
+		alert(hait.getCompById("mySelect").getValue());
+	}
+
+	function setValue(val){
+		hait.getCompById("mySelect").setValue(val);
+	}
+
+	function reset(){
+		hait.getCompById("mySelect").reset();
+	}
+
+	function setDisabled(val){
+		hait.getCompById("mySelect").setDisabled(val);
+	}
+</script>
+</head>
+<body>
+	<p>
+		<B>省市区选择组件</B>
+	</p>
+	<p>
+		表单元素，省市区选择组件，继承自<a href="../field.html">hait.form.Field</a>元素
+	</p>
+	<p>
+		<B>类名</B>
+	</p>
+	<p>hait.form.field.ProvinceField</p>
+	<p>
+		<B>属性</B>
+	</p>
+	<ul>
+		<li>id : 如果没有设置，那么系统将自动生成</li>
+		<li>name : 名称</li>
+		<li>text : 描述名称</li>
+		<li>type : 类别</li>
+		<li>defaultValue : 默认值</li>
+		<li>value : 当前值</li>
+		<li>placeholder : 占位符</li>
+		<li>required : 是否必须</li>
+		<li>disabled : 是否禁用</li>
+		<li>readonly : 是否只读</li>
+		<li>pattern : 正则表达式</li>
+		<li>patternMessage : 当正则表达式没有验证通过时显示的提示</li>
+		<li>style : 最外层的样式设置</li>
+		<li>province : 省下拉列表对象</li>
+		<li>city : 市下拉列表对象</li>
+		<li>area : 区下拉列表对象</li>
+	</ul>
+	<p>
+		<B>方法</B>
+	</p>
+	<ul>
+		<li>draw() : 直接绘制该对象</li>
+		<li>getValue() : 获取值</li>
+		<li>setValue(val)	 : 设置值</li>
+		<li>setDisabled(isDisabled) : 设置禁用</li>
+		<li>setReadonly(isReadonly) : 设置只读</li>
+		<li>validate() : 验证自身数据的方法，验证是否必须，正则表达式</li>
+		<li>reset() : 重置的基本实现</li>
+	</ul>
+	<p>
+		<B>使用示例</B>
+	</p>
+	<p>代码1：直接在页面上书写元素（减号改为下划线使用）</p>
+	<pre class="brush:js;">
+		<select id="mySelect" hait-type="hait.form.field.ProvinceField"></select>
+	</pre>
+	<p>效果1：</p>
+	<button onclick="getValue()" class="hait_button">获取值</button>
+	<button onclick="setValue('120223')" class="hait_button">设置值</button>
+	<button onclick="reset()" class="hait_button">重置</button>
+	<button onclick="setDisabled(true)" class="hait_button">设置禁用</button>
+	<button onclick="setDisabled(false)" class="hait_button">解除禁用</button><br><br><br>
+	<span style="float: left;">&nbsp;输入框：</span>
+	<select id="mySelect" hait_type="hait.form.field.ProvinceField"></select>
+	<div class="cls"></div>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+		var select = new hait.form.field.ProvinceField();
+		select.draw();
+		$("#myselect1").append(select.obj);
+	</pre>
+	<p>效果2：</p>
+	<span style="float: left;">&nbsp;输入框：</span>
+	<div id="myselect1"></div>
+	<div class="cls"></div>
+	<div class="cls"></div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<script type="text/javascript">
+	//初始化代码显示
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

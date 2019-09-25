@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>表格</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../include.js"></script>
+<script type="text/javascript" src="../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../doc.css" />
+<script type="text/javascript">
+	//导入需要的类
+		hait.register("hait.grid.Grid");
+
+		$(document).ready(function(){
+			//初始化代码显示
+			SyntaxHighlighter.all();
+
+			var grid = new hait.grid.Grid();
+		grid.setParam({
+			style : "width:600px;height:300px",
+			columns : [
+				{field:"did",text:"字典编号"},
+				{field:"name",text:"字典名称"},
+				{field:"val",text:"字典取值",statistics:"sum"},
+				{field:"note",text:"取值说明"}
+			],
+			data : [
+				{did:"1",name:"名称1",val:"1",note:"说明1"},
+				{did:"2",name:"名称1",val:"2",note:"说明2"},
+				{did:"3",name:"名称1",val:"3",note:"说明3"},
+				{did:"4",name:"名称2",val:"4",note:"说明4"},
+				{did:"5",name:"名称2",val:"1",note:"说明1"},
+				{did:"6",name:"名称2",val:"2",note:"说明2"}
+			]
+		});
+		grid.draw();
+		$("#targetGrid1").append(grid.obj);
+
+		var grid4 = new hait.grid.Grid();
+		grid4.setParam({
+			style : "width:600px;",
+			columns : [
+				{field:"item_id",text:"字典编号"},
+				{field:"item_name",text:"字典名称"},
+				{field:"item_val",text:"字典取值"},
+				{field:"item_note",text:"取值说明"}
+			],
+			mode : "func",
+			funcId : "hex_frame_func_test"
+		});
+		grid4.draw();
+		$("#targetGrid4").append(grid4.obj);
+		
+		var grid7 = new hait.grid.Grid();
+		grid7.setParam({
+			id : "reportGrid1",
+			style : "width:600px;",
+			header : '<tr><th>名称1</th><th colspan="3">标题1</th></tr><tr><th>名称2</th><th>标题21</th><th colspan="2">标题21</th></tr><tr><th field="did">字典编号</th><th field="name">字典名称</th><th field="val">字典取值</th><th field="note">取值说明</th></tr>',
+			columns : [
+				{field:"did",text:"字典编号"},
+				{field:"name",text:"字典名称"},
+				{field:"val",text:"字典取值"},
+				{field:"note",text:"取值说明"}
+			],
+			data : [
+				{did:"1",name:"名称1",val:"1",note:"说明1"},
+				{did:"2",name:"名称1",val:"2",note:"说明2"},
+				{did:"3",name:"名称1",val:"3",note:"说明3"},
+				{did:"4",name:"名称2",val:"4",note:"说明4"},
+				{did:"5",name:"名称2",val:"1",note:"说明1"},
+				{did:"6",name:"名称2",val:"2",note:"说明2"}
+			]
+		});
+		grid7.draw();
+		$("#targetGrid7").append(grid7.obj);
+	});
+</script>
+</head>
+<body>
+	<p><B>表格</B></p>
+	<p>用于生成一个表格</p>
+	<p><B>类名</B></p>
+	<p>hait.grid.Grid</p>
+	<p><B>属性</B></p>
+	<ul>
+		<li>id : 编号，如果没有会自动生成</li>
+		<li>columns : 列配置信息，例如：[{text : "内容编号",field : "nrbh"}, {text : "所在目录",field : "mlmc"}]</li>
+		<li>style : 样式设置</li>
+		<li>multiple : 是否为复选，默认为true</li>
+		<li>limit : 每页数据最大限制，默认为12</li>
+		<li>data : 当前表格中的数据</li>
+		<li>mode : 模式local/func/url</li>
+		<li>server : 目标服务器地址，默认可不设置，可写值：CUSTOMER_SERVER，DRIVER_SERVER</li>
+		<li>funcId : 当mode为func的参数，请求功能号</li>
+		<li>statFuncId : 当mode为func的参数，统计功能号</li>
+		<li>params : 当mode为func的参数，请求功能号、统计功能号的请求参数</li>
+		<li>auto : 是否自动请求数据，默认为true</li>
+		<li>url : 当mode为url的参数，数据源地址</li>
+		<li>titleSort : 点击标题时是否排序，默认为false</li>
+		<li>sortParamName : 排序参数名称，默认为table_order_by</li>
+		<li>pagination : 是否显示分页条，默认为true</li>
+		<li>paginationPlace : 分页条显示位置，默认为right</li>
+        <li>lockCount : 冻结列数，是一个整型数字</li>
+        <li>lockLeftWidth : 冻结列情况下左边表格的宽度，可以像素或者百分比</li>
+        <li>lockRightWidth : 冻结列情况下右边表格的宽度，一定设置为像素，否则将无效</li>
+	</ul>
+	<p><B>事件</B></p>
+	<ul>
+		<li>onrowclick : 当行被点击的时候执行的事件</li>
+		<li>onrowdblclick : 当行被双击的时候执行的事件</li>
+		<li>onrefresh : 完成刷新后执行的事件</li>
+		<li>onload : 完成本身的创建后的调用的事件</li>
+		<li>onwrite : 每列在绘制之前执行的方法，用于更改单元格中的值，会传递三个参数fieldValue, item, fieldName</li>
+	</ul>
+	<p><B>方法</B></p>
+	<ul>
+		<li>draw() : 直接绘制对象</li>
+		<li>refresh(isReset) : 刷新列表，参数为是否重置页数，默认为true</li>
+		<li>pageNext()	 : 翻到下一页</li>
+		<li>pagePrev()	 : 翻到上一页</li>
+		<li>getSelected() : 获取当前复选框选中的对象</li>
+		<li>setSelected(condition) : 设置选中行，条件可以是id=1，也可以是行数</li>
+		<li>setAllChecked(checked) : 设置全选</li>
+		<li>insertItem(item) : 添加数据，为JSON格式，在mode=local下有效</li>
+		<li>updateItem(condition, item) : 修改数据，为JSON格式，在mode=local下有效</li>
+		<li>deleteItem(condition) : 删除数据，在mode=local下有效</li>
+		<li>getLocalData(condition) : 查询本地数据，在mode=local下有效</li>
+		<li>clearLocalData() : 清除本地数据，在mode=local下有效</li>
+		<li>toExcel(fileName) : 导出excel，fileName为空时，自动以当前日期作为文件名</li>
+	</ul>
+	<p><B>使用示例</B></p>
+	<p>代码1：直接在页面上书写元素（下划线改为减号使用）</p>
+	<pre class="brush:js;">
+	<table id="targetGrid" style="width: 600px;" hait_type="hait.grid.Grid" multiple="true" pagination="false"  title-sort="true">
+		<tbody>
+			<tr>
+				<th colspan="4">合并</th>
+			</tr>
+			<tr>
+				<th colspan="2">合并1</th>
+				<th colspan="2">合并2</th>
+			</tr>
+			<tr>
+				<th field="did">字典编号</th>
+				<th field="name">字典名称</th>
+				<th field="val" statistics="sum/avg">字典取值</th>
+				<th field="note">取值说明</th>
+			</tr>
+			<tr><td>1</td><td>名称1</td><td>1</td><td>说明1</td></tr>
+			<tr><td>2</td><td>名称1</td><td>2</td><td>说明2</td></tr>
+			<tr><td>3</td><td>名称1</td><td>3</td><td>说明3</td></tr>
+			<tr><td>4</td><td>名称1</td><td>4</td><td>说明4</td></tr>
+			<tr><td>5</td><td>名称2</td><td>1</td><td>说明1</td></tr>
+			<tr><td>6</td><td>名称2</td><td>2</td><td>说明2</td></tr>
+		</tbody>
+	</table>
+	function insertItem(){
+		var targetFirstGrid = hait.getCompById("targetFirstGrid");
+		var curId = Math.round(Math.random() * 100);
+		targetFirstGrid.insertItem({
+			did : curId,
+			name : "名称" + curId,
+			val : 1,
+			note : "说明" + curId
+		});
+	}
+	function updateItem(){
+		var targetFirstGrid = hait.getCompById("targetFirstGrid");
+		targetFirstGrid.updateItem("did=1", {
+			did : 1,
+			name : "修改了名称"
+		});
+	}
+	function deleteItem(){
+		var targetFirstGrid = hait.getCompById("targetFirstGrid");
+		targetFirstGrid.deleteItem("name=名称1");
+	}
+	function selectItem(){
+		var targetFirstGrid = hait.getCompById("targetFirstGrid");
+		targetFirstGrid.setSelected("did=6");
+	}
+	
+	</pre>
+	<p>效果1：</p>
+
+	<table id="targetFirstGrid" style="width: 600px;" hait-type="hait.grid.Grid" pagination="false"  title-sort="true">
+		<tr>
+			<th field="did">字典编号</th>
+			<th field="name">字典名称</th>
+			<th field="val" statistics="sum">字典取值</th>
+			<th field="note">取值说明</th>
+		</tr>
+		<tr><td>1</td><td>名称1</td><td>1</td><td>说明1</td></tr>
+		<tr><td>2</td><td>名称1</td><td>2</td><td>说明2</td></tr>
+		<tr><td>3</td><td>名称1</td><td>3</td><td>说明3</td></tr>
+		<tr><td>4</td><td>名称1</td><td>4</td><td>说明4</td></tr>
+		<tr><td>5</td><td>名称2</td><td>1</td><td>说明1</td></tr>
+		<tr><td>6</td><td>名称2</td><td>2</td><td>说明2</td></tr>
+	</table>
+	<p>本地表格编辑功能：
+		<button onclick="insertItem()">添加数据</button>
+		<button onclick="updateItem()">修改数据</button>
+		<button onclick="deleteItem()">删除数据</button>
+		<button onclick="selectItem()">设置选中</button>
+	</p>
+	<script type="text/javascript">
+	function insertItem(){
+		var targetFirstGrid = hait.getCompById("targetFirstGrid");
+		var curId = Math.round(Math.random() * 100);
+		targetFirstGrid.insertItem({
+			did : curId,
+			name : "名称" + curId,
+			val : 1,
+			note : "说明" + curId
+		});
+	}
+	function updateItem(){
+		var targetFirstGrid = hait.getCompById("targetFirstGrid");
+		targetFirstGrid.updateItem("did=1", {
+			did : 1,
+			name : "修改了名称"
+		});
+	}
+	function deleteItem(){
+		var targetFirstGrid = hait.getCompById("targetFirstGrid");
+		targetFirstGrid.deleteItem("name=名称1");
+	}
+	function selectItem(){
+		var targetFirstGrid = hait.getCompById("targetFirstGrid");
+		targetFirstGrid.setSelected("did=6");
+	}
+	</script>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+	var grid = new hait.grid.Grid();
+	grid.setParam({
+		style : "width:600px;height:300px",
+		columns : [
+			{field:"did",text:"字典编号"},
+			{field:"name",text:"字典名称"},
+			{field:"val",text:"字典取值"},
+			{field:"note",text:"取值说明"}
+		],
+		data : [
+			{did:"1",name:"名称1",val:"1",note:"说明1"},
+			{did:"2",name:"名称1",val:"2",note:"说明2"},
+			{did:"3",name:"名称1",val:"3",note:"说明3"},
+			{did:"4",name:"名称2",val:"4",note:"说明4"},
+			{did:"5",name:"名称2",val:"1",note:"说明1"},
+			{did:"6",name:"名称2",val:"2",note:"说明2"}
+		]
+	});
+	grid.draw();
+	$("#targetGrid1").append(grid.obj);
+	</pre>
+	<p>效果2：</p>
+	<div id="targetGrid1"></div>
+	<p>代码3：直接在页面上书写元素（远程数据）</p>
+	<pre class="brush:js;">
+		<table id="targetGrid3" style="width: 600px" hait_type="hait.grid.Grid" mode="func" func-id="hex_frame_func_test" params="operate:'query_all'" multiple="true">
+			<tr>
+				<th field="item_id">字典编号</th>
+				<th field="item_name">字典名称</th>
+				<th field="item_val">字典取值</th>
+				<th field="item_note">字典备注</th>
+			</tr>
+		</table>
+	</pre>
+	<p>效果3：</p>
+	<table id="targetGrid3" style="width: 600px" hait-type="hait.grid.Grid" mode="func" func-id="hex_frame_func_test" params="operate:'query_all'" multiple="true">
+		<tr>
+			<th field="item_id">字典编号</th>
+			<th field="item_name">字典名称</th>
+			<th field="item_val">字典取值</th>
+			<th field="item_note">字典备注</th>
+		</tr>
+	</table>
+	<p>代码4：代码编写（远程数据）</p>
+	<pre class="brush:js;">
+	var grid4 = new hait.grid.Grid();
+	grid4.setParam({
+		style : "width:600px;",
+		columns : [
+			{field:"item_id",text:"字典编号"},
+			{field:"item_name",text:"字典名称"},
+			{field:"item_val",text:"字典取值"},
+			{field:"item_note",text:"取值说明"}
+		],
+		mode : "func",
+		funcId : "hex_frame_func_test"
+	});
+	grid4.draw();
+	$("#targetGrid4").append(grid4.obj);
+	</pre>
+	<div id="targetGrid4"></div>
+	<p>代码5：直接在页面上书写元素（远程数据）</p>
+	<pre class="brush:js;">
+		<table id="targetGrid5" style="width: 600px" hait_type="hait.grid.Grid" mode="url" url="../../data/tableurl.json" multiple="true">
+			<tr>
+				<th field="index_type_id">类型编号</th>
+				<th field="type_name">类型名称</th>
+				<th field="ico_color">颜色</th>
+			</tr>
+		</table>
+	</pre>
+	<p>效果5：</p>
+	<table id="targetGrid5" style="width: 600px" hait-type="hait.grid.Grid" mode="url" url="../../data/tableurl.json" multiple="true">
+		<tr>
+			<th field="index_type_id">类型编号</th>
+			<th field="type_name">类型名称</th>
+			<th field="ico_color">颜色</th>
+		</tr>
+	</table>
+	<p>效果6：报表形式表格（下划线改为减号使用）</p>
+	<pre class="brush:js;">
+	<table id="reportGrid" style="width: 600px;" hait_type="hait.grid.Grid" multiple="true" pagination="false">
+		<tbody>
+			<tr>
+				<th>名称1</th>
+				<th colspan="3">标题1</th>
+			</tr>
+			<tr>
+				<th>名称2</th>
+				<th>标题21</th>
+				<th colspan="2">标题21</th>
+			</tr>
+			<tr>
+				<th field="did">字典编号</th>
+				<th field="name">字典名称</th>
+				<th field="val" statistics="sum">字典取值</th>
+				<th field="note">取值说明</th>
+			</tr>
+			<tr><td>1</td><td>名称1</td><td>1</td><td>说明1</td></tr>
+			<tr><td>2</td><td>名称1</td><td>2</td><td>说明2</td></tr>
+			<tr><td>3</td><td>名称1</td><td>3</td><td>说明3</td></tr>
+			<tr><td>4</td><td>名称1</td><td>4</td><td>说明4</td></tr>
+			<tr><td>5</td><td>名称2</td><td>1</td><td>说明1</td></tr>
+			<tr><td>6</td><td>名称2</td><td>2</td><td>说明2</td></tr>
+		</tbody>
+	</table>
+	</pre>
+	<p>效果6：</p>
+	<table id="reportGrid" style="width: 600px;" hait-type="hait.grid.Grid" pagination="false">
+		<tr>
+			<th>名称1</th>
+			<th colspan="3">标题1</th>
+		</tr>
+		<tr>
+			<th>名称2</th>
+			<th>标题21</th>
+			<th colspan="2">标题21</th>
+		</tr>
+		<tr>
+			<th field="did">字典编号</th>
+			<th field="name">字典名称</th>
+			<th field="val" statistics="sum">字典取值</th>
+			<th field="note">取值说明</th>
+		</tr>
+		<tr><td>1</td><td>名称1</td><td>1</td><td>说明1</td></tr>
+		<tr><td>2</td><td>名称1</td><td>2</td><td>说明2</td></tr>
+		<tr><td>3</td><td>名称1</td><td>3</td><td>说明3</td></tr>
+		<tr><td>4</td><td>名称1</td><td>4</td><td>说明4</td></tr>
+		<tr><td>5</td><td>名称2</td><td>1</td><td>说明1</td></tr>
+		<tr><td>6</td><td>名称2</td><td>2</td><td>说明2</td></tr>
+	</table>
+	<p>代码7：代码编写</p>
+	<textarea style="width: 50%;height: 360px;" readonly="readonly">
+		var grid7 = new hait.grid.Grid();
+		grid7.setParam({
+			style : "width:600px;",
+			header : '<tr><th>名称1</th><th colspan="3">标题1</th></tr><tr><th>名称2</th><th>标题21</th><th colspan="2">标题21</th></tr><tr><th field="did">字典编号</th><th field="name">字典名称</th><th field="val">字典取值</th><th field="note">取值说明</th></tr>',
+			columns : [
+				{field:"did",text:"字典编号"},
+				{field:"name",text:"字典名称"},
+				{field:"val",text:"字典取值"},
+				{field:"note",text:"取值说明"}
+			],
+			data : [
+				{did:"1",name:"名称1",val:"1",note:"说明1"},
+				{did:"2",name:"名称1",val:"2",note:"说明2"},
+				{did:"3",name:"名称1",val:"3",note:"说明3"},
+				{did:"4",name:"名称2",val:"4",note:"说明4"},
+				{did:"5",name:"名称2",val:"1",note:"说明1"},
+				{did:"6",name:"名称2",val:"2",note:"说明2"}
+			]
+		});
+		grid7.draw();
+		$("#targetGrid7").append(grid7.obj);
+	</textarea>
+	<p>效果7：</p>
+	<div id="targetGrid7"></div>
+	<button onclick="toExcel()" class="hait-button">导出Excel</button>
+	<script type="text/javascript">
+	function toExcel(){
+		var grid = hait.getCompById("reportGrid1");
+		grid.toExcel("export_test");
+	}
+	</script>
+	<br> <br> <br> <br> <br> <br>
+</body>
+</html>

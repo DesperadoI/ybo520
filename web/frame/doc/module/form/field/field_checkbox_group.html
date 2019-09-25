@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>表单元素 - 复选框Checkbox组</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../../../../include.js"></script>
+<script type="text/javascript" src="../../../../plugins/highlighter/include.js"></script>
+<link rel="stylesheet" href="../../doc.css" />
+<script type="text/javascript">
+	hait.register("hait.form.field.CheckboxGroupField");
+	$(document).ready(function() {
+		// 页面代码
+		var mycheckbox = new hait.form.field.CheckboxGroupField();
+		mycheckbox.setParam({
+			id : "mycheckbox1",
+			defaultValue : "id,name",
+			options : [ {
+				text : "编号",
+				val : "id"
+			}, {
+				text : "名称",
+				val : "name"
+			} ]
+		});
+		mycheckbox.draw();
+		$("#mycheckbox1").append(mycheckbox.obj);
+	});
+</script>
+</head>
+<body>
+	<p>
+		<B>复选框Checkbox组</B>
+	</p>
+	<p>
+		表单元素，复选框Checkbox组，继承自<a href="field_select.html">hait.form.field.SelectField</a>元素
+	</p>
+	<p>
+		<B>类名</B>
+	</p>
+	<p>hait.form.field.CheckboxGroupField</p>
+	<p>
+		<B>属性</B>
+	</p>
+	<ul>
+		<li>和SelectField组件一致</li>
+	</ul>
+	<p>
+		<B>方法</B>
+	</p>
+	<ul>
+		<li>和SelectField组件一致</li>
+	</ul>
+	<p>
+		<B>事件</B>
+	</p>
+	<ul>
+		<li>和SelectField组件一致</li>
+	</ul>
+	<p>
+		<B>使用示例</B>
+	</p>
+	<p>代码1：直接在页面上书写元素（减号改为下划线使用）</p>
+	<pre class="brush:js;">
+		<select name="mycheckbox" hait_type="hait.form.field.CheckboxGroupField" default-value="name">
+	    	<option value="id">编号</option>
+	    	<option value="name">名称</option>
+	    	<option value="age">年龄</option>
+	    </select>
+	</pre>
+	<p>效果1：</p>
+	<span style="float: left;">&nbsp;输入框：</span>
+	<select id="mycheckbox" hait-type="hait.form.field.CheckboxGroupField" default-value="name">
+		<option value="id">编号</option>
+		<option value="name">名称</option>
+		<option value="age">年龄</option>
+	</select>
+	<button class="hait_button" style="margin-left: 100px" onclick="getCheckboxValue()">获取值</button>
+	<button class="hait_button" onclick="getCheckboxDisplayValue()">获取显示值</button>
+	<button class="hait_button" onclick="setCheckboxValue()">设置值</button>
+	<button class="hait_button" onclick="setCheckboxDisabled(true)">设置禁用</button>
+	<button class="hait_button" onclick="setCheckboxDisabled(false)">解除禁用</button>
+	<script type="text/javascript">
+	function getCheckboxValue(){
+		alert(hait.getCompById("mycheckbox").getValue());
+	}
+	
+	function getCheckboxDisplayValue(){
+		alert(hait.getCompById("mycheckbox").getDisplayValue());
+	}
+	
+	function setCheckboxValue(){
+		hait.getCompById("mycheckbox").setValue("id,name");
+	}
+	
+	function setCheckboxDisabled(disabled){
+		hait.getCompById("mycheckbox").setDisabled(disabled);
+	}
+	</script>
+	<div class="cls"></div>
+	<p>代码2：代码编写</p>
+	<pre class="brush:js;">
+		var mycheckbox = new hait.form.field.CheckboxGroupField();
+		mycheckbox.setParam({
+			defaultValue : "id,name",
+			options : [ {
+				text : "编号",
+				val : "id"
+			}, {
+				text : "名称",
+				val : "name"
+			} ]
+		});
+		mycheckbox.draw();
+		$("#mycheckbox1").append(mycheckbox.obj);
+	</pre>
+	<p>效果2：</p>
+	<span style="float: left;">&nbsp;复选框组：</span>
+	<div id="mycheckbox1"></div>
+	<div class="cls"></div>
+	<p>代码3：从远程获取数据</p>
+	<pre class="brush:js;">
+		<select id="searchRole" hait_type="hait.form.field.CheckboxGroupField" mode="func" func_id="bex_sys_roles" params="operate:'query_all'"
+		option_value="role_id" option_text="role_name"></select>
+	</pre>
+	<div class="cls"></div>
+	<p>代码4：从数据字典获取数据</p>
+	<pre class="brush:js;">
+		<select name="state" hait_type="hait.form.field.CheckboxGroupField" mode="dict" dict="YES_NO">
+		</select>
+	</pre>
+	<div class="cls"></div>
+	<span style="float: left;">&nbsp;复选框组：</span>
+	<select name="state" hait-type="hait.form.field.CheckboxGroupField" mode="dict" dict="YES_NO">
+		</select>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<script type="text/javascript">
+	//初始化代码显示
+	SyntaxHighlighter.all();
+	</script>
+</body>
+</html>

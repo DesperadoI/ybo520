@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<!-- 核心层Bean配置中心 -->
+	<bean id="core.config" class="java.util.HashMap">
+		<property name="licence" value="cffc" />
+	</bean>
+
+	<!-- 初始化完毕后统一执行的监听，主要用于各自组件的初始化，日志是默认导入的 -->
+	<bean id="core.listener" class="com.haitsoft.framework.core.listener.HaitContextListener" >
+		<property name="listeners">
+			<list>
+				<entry ref="core.i18n.listener" />
+				<entry ref="cache.listener" />
+				<entry ref="dao.listener" />
+				<entry ref="task.listener" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 国际化监听设置 -->
+	<bean id="core.i18n.listener" class="com.haitsoft.framework.core.listener.I18NListener" >
+		<property name="language" value="zh_CN" />
+		<property name="config" value="/WEB-INF/i18n/i18n-map-config.xml" />
+	</bean>
+
+	<!-- 日志输出器配置 -->
+	<bean id="core.loggerConfig" class="java.util.HashMap">
+		<property name="level" value="info" />
+		<property name="fileUrl" value="/WEB-INF/log/hait" />
+		<property name="limit" value="800000" />
+		<property name="dateInter" value="5" />
+	</bean>
+
+	<!-- 缓存层配置中心 -->
+	<bean id="cache.config" class="java.util.HashMap">
+		<!-- 设置工作方式 server 集群缓存 local 本地缓存 -->
+		<property name="type" value="server" />
+		<!-- 临时缓存默认到期时间 -->
+		<property name="temp_timeout" value="5"/>
+	</bean>
+
+	<!-- 缓存层监听对象 -->
+	<bean id="cache.listener" class="com.haitsoft.framework.cache.listener.CacheListener" >
+		<property name="servers">
+			<list>
+				<entry value="127.0.0.1:11211" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 缓存层上下文（单例） -->
+	<bean id="cache.context" class="com.haitsoft.framework.cache.context.CacheContext" />
+
+	<!-- 计划任务监听 -->
+	<bean id="task.listener" class="com.haitsoft.framework.task.listener.TaskListener" >
+		<property name="taskServerMark" value="100" />
+	</bean>
+
+	<!-- 数据层Bean配置中心 -->
+	<bean id="dao.config" class="java.util.HashMap">
+	</bean>
+
+	<!-- ID生成器（单例） -->
+	<bean id="dao.idworker" class="com.haitsoft.framework.data.util.IdWorker" />
+
+	<!-- 数据服务 -->
+	<bean id="dao.initAction" type="action" action="/data/init.do" class="com.haitsoft.framework.data.action.InitAction">
+		<property name="config" value="/WEB-INF/hex/hex-map-config.xml" />
+	</bean>
+
+	<!-- 数据层监听对象 -->
+	<bean id="dao.listener" class="com.haitsoft.framework.data.listener.DataListener" />
+
+	<!-- 数据层上下文对象（单例） -->
+	<bean id="dao.context" class="com.haitsoft.framework.data.context.DataContext" >
+		<property name="daoType">
+			<map>
+				<entry name="jdbc" ref="dao.jdbcDao" />
+				<entry name="function" ref="dao.functionDao"/>
+				<entry name="proc" ref="dao.procDao" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- JDBC方式DAO对象 -->
+	<bean id="dao.jdbcDao" class="com.haitsoft.framework.data.dao.jdbc.JdbcDao">
+		<property name="jdbcExecution" ref="dao.jdbcExecution" />
+	</bean>
+
+	<!-- JDBC执行对象 -->
+	<bean id="dao.jdbcExecution" class="com.haitsoft.framework.data.dao.jdbc.JdbcExecution">
+		<property name="sqlBuilderType">
+			<map>
+				<entry name="insert" ref="dao.insterSqlBuilder" />
+				<entry name="update" ref="dao.updateSqlBuilder" />
+				<entry name="sql_update" ref="dao.configureUpdateSqlBuilder" />
+				<entry name="delete" ref="dao.deleteSqlBuilder" />
+				<entry name="query" ref="dao.generalQuerySqlBuilder" />
+				<entry name="query_all" ref="dao.generalQuerySqlBuilder" />
+				<entry name="query_count" ref="dao.generalQueryCountSqlBuilder" />
+				<entry name="sql_query" ref="dao.configureQuerySqlBuilder" />
+				<entry name="sql_query_all" ref="dao.configureQuerySqlBuilder" />
+				<entry name="sql_query_count" ref="dao.configureQueryCountSqlBuilder" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- 语句生成对象 -->
+	<bean id="dao.insterSqlBuilder" class="com.haitsoft.framework.data.dao.jdbc.builder.InsterSqlBuilder" />
+	<bean id="dao.updateSqlBuilder" class="com.haitsoft.framework.data.dao.jdbc.builder.UpdateSqlBuilder" />
+	<bean id="dao.deleteSqlBuilder" class="com.haitsoft.framework.data.dao.jdbc.builder.DeleteSqlBuilder" />
+	<!-- 常规查询语句拼接方式 -->
+	<bean id="dao.generalQuerySqlBuilder" class="com.haitsoft.framework.data.dao.jdbc.builder.GeneralQuerySqlBuilder">
+		<property name="queryPageType">
+			<map>
+				<entry name="mysql" ref="dao.mysqlQueryPage" />
+				<entry name="oracle" ref="dao.oracleQueryPage" />
+				<entry name="sqlserver" ref="dao.sqlServerQueryPage" />
+			</map>
+		</property>
+	</bean>
+	<bean id="dao.generalQueryCountSqlBuilder" class="com.haitsoft.framework.data.dao.jdbc.builder.GeneralQueryCountSqlBuilder" />
+	<!-- 配置SQL语句拼接方式 -->
+	<bean id="dao.configureUpdateSqlBuilder" class="com.haitsoft.framework.data.dao.jdbc.builder.ConfigureUpdateSqlBuilder" />
+	<bean id="dao.configureQuerySqlBuilder" class="com.haitsoft.framework.data.dao.jdbc.builder.ConfigureQuerySqlBuilder">
+		<property name="queryPageType">
+			<map>
+				<entry name="mysql" ref="dao.mysqlQueryPage" />
+				<entry name="oracle" ref="dao.oracleQueryPage" />
+				<entry name="sqlserver" ref="dao.sqlServerQueryPage" />
+			</map>
+		</property>
+	</bean>
+	<bean id="dao.configureQueryCountSqlBuilder" class="com.haitsoft.framework.data.dao.jdbc.builder.ConfigureQueryCountSqlBuilder" />
+	<!-- 分页对象 -->
+	<bean id="dao.mysqlQueryPage" class="com.haitsoft.framework.data.dao.jdbc.builder.page.MysqlQueryPage" />
+	<bean id="dao.oracleQueryPage" class="com.haitsoft.framework.data.dao.jdbc.builder.page.OracleQueryPage" />
+	<bean id="dao.sqlServerQueryPage" class="com.haitsoft.framework.data.dao.jdbc.builder.page.SqlServerQueryPage" />
+
+	<!-- 原子业务执行方式 -->
+	<bean id="dao.functionDao" class="com.haitsoft.framework.data.dao.function.FunctionDao" />
+
+	<!-- 存储过程执行方式 -->
+	<bean id="dao.procDao" class="com.haitsoft.framework.data.dao.proc.ProcDao">
+		<property name="procExecution" ref="dao.procExecution" />
+	</bean>
+	<bean id="dao.procExecution" class="com.haitsoft.framework.data.dao.proc.ProcExecution"/>
+</beans>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>关于手册</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../include.js"></script>
+    <script type="text/javascript" src="../../plugins/highlighter/include.js"></script>
+    <script>
+        $(document.body).ready(function () {
+            //初始化代码显示
+            SyntaxHighlighter.all();
+        });
+    </script>
+    <link rel="stylesheet" href="doc.css"/>
+</head>
+<body>
+<p>本手册是 <B>hait6.0</B> 的一部分。</p>
+<p>hait6.0主要是采用css3/javascript/jquery1.10/html5语言写成，本手册针对的是web界面开发及相关人员。对于相关的基础知识，本手册不做专门的介绍。<br>
+    本手册针对的浏览器运行环境，推荐使用谷歌14+，火狐10+，IE10+。<br>
+</p>
+<p><B>CSS编码规范</B></p>
+<p>选择器存在多个单词时使用减号"-"来进行连接,这是HTML5标准规范</p>
+<pre class="brush:js;">
+.hait-select {
+    width: 200px;
+    height: 28px;
+}
+
+.hait-select .select-show-text {
+    width: 160px;
+    height: 26px;
+}
+</pre>
+<p><B>HTML编码规范</B></p>
+<p>
+    1.属性存在多个单词时使用减号"-"来进行连接,这是HTML5标准规范<br>
+    2.编号(id)和名称(name)由于要用于JS操作,所以采用骆驼命名法,这是编程语言标准规范<br>
+    3.功能号(funcId)参见后面的hait框架编码规范<br>
+    4.接口字段参见后面的hait框架编码规范
+</p>
+<pre class="brush:js;">
+<select id="searchDict" mode="func" func-id="hex_frame_func_test" params="operate:'query_all'"
+        option-value="item_val" option-text="item_name"></select>
+</select>
+</pre>
+<p><B>JS编码规范</B></p>
+<p>
+    1.属性方法均采用骆驼命名法,这是编程语言标准规范<br>
+    2.私有属性,前端增加下划线<br>
+    3.事件属性,以on前缀
+</p>
+<pre class="brush:js;">
+hait.form.field.SelectField = function () {
+    /**
+     * mode为func时的相关参数
+     */
+    this.funcId = null;
+    this.params = null;
+
+    /**
+     * 放置事件对象
+     */
+    this.onchange = null; // 选择变更事件
+    this.onrefresh = null; // 完成刷新后执行的事件
+
+    /**
+     * 私有属性
+     */
+    this._isInitComplete = false; // 是否已经初始化完毕
+    this._delayValue = null;// 延迟值（用于初始化未完成时的赋值操作）
+};
+</pre>
+<p><B>Hait框架编码规范</B></p>
+<p>
+    1.功能号(funcId),以hex为前缀,中间单词为所在文件名称(可能多个),后面才是详细功能号名称,使用骆驼命名法<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;示例:hex_cust_account_queryCustAccountById<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;这个功能号位于cust文件夹下的account.xml文件中,名称为queryCustAccountById<br>
+    2.数据库表名和字段名均采用小写单词,多个单词采用下划线隔开<br>
+    3.待增加...
+</p>
+</body>
+</html>

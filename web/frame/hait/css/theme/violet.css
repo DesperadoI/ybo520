@@ -1,0 +1,44 @@
+/*紫色主题*/
+
+/*主界面的改变*/
+.top-container .logo {
+    background-color: #264aa8;
+}
+
+.top-container td {
+    height: 50px;
+    background-color: #385cb3;
+}
+
+.top-container .line {
+	background-color: #1d46b3;
+}
+
+.first-nav .selected {
+    background-color: #385cb3;
+}
+
+.title-bar .title {
+    border-left: 2px solid #385cb3;
+}
+
+/*按钮的改变*/
+.hait-button.stress {
+    color: white;
+    border: 1px solid #264aa8;
+    background-color: #264aa8;
+}
+
+.hait-button.stress:hover {
+    background-color: #385cb3;
+}
+
+/*表格页数*/
+.hait-table-bottom .pagination-bar ul.pagination-num li.selected {
+    background-color: #385cb3;
+    color: white;
+}
+
+.hait-tab .hait-tab-title .selected {
+    border-top: 2px solid #385cb3;
+}
