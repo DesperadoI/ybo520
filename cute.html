@@ -3,22 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>相册</title>
-    <script type="text/javascript" src="viewer.min.js"></script>
-    <script type="text/javascript" src="cute.js"></script>
-    <link rel="stylesheet" href="viewer.min.css"/>
+    <style>
+        .img-table{
+            width:100%;
+            border:2px solid white;
+        }
+        .img-bot{
+            width: 100%;
+        }
+    </style>
 </head>
-<body onload="showImageDialog()">
-<ul id="viewer">
-    <img src="img/001.jpg">
-    <img src="img/001.jpg">
-    <img src="img/001.jpg">
-    <img src="img/001.jpg">
-    <img src="img/001.jpg">
-    <img src="img/001.jpg">
-    <img src="img/001.jpg">
-    <img src="img/001.jpg">
-    <img src="img/001.jpg">
-    <img src="img/001.jpg">
-</ul>
+<body>
+    <table class="img-table">
+        <tr>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+        </tr>
+        <tr>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+        </tr>
+        <tr>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+        </tr>
+        <tr>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+            <td><img class="img-bot" src="img/001.jpg"></td>
+        </tr>
+    </table>
 </body>
 </html>
