@@ -17,7 +17,45 @@ $(document).ready(function () {
             }
     })();
     init();
+
+    setInterval(function(){
+        showHeart(30);
+        setTimeout("showHeart(130)", 200);
+        setTimeout("showHeart(230)", 400);
+        setTimeout("showHeart(330)", 300);
+        setTimeout("showHeart(430)", 600);
+        setTimeout("showHeart(530)", 500);
+        setTimeout("showHeart(630)", 100);
+        setTimeout("showHeart(730)", 900);
+        setTimeout("showHeart(830)", 800);
+        setTimeout("showHeart(930)", 100);
+        setTimeout("showHeart(1030)", 200);
+        setTimeout("showHeart(1130)", 400);
+        setTimeout("showHeart(1230)", 800);
+        setTimeout("showHeart(1330)", 600);
+        setTimeout("showHeart(1430)", 400);
+        setTimeout("showHeart(1530)", 200);
+        setTimeout("showHeart(1630)", 900);
+        setTimeout("showHeart(1730)", 300);
+        setTimeout("showHeart(1830)", 600);
+        setTimeout("showHeart(1930)", 900);
+        setTimeout("showHeart(2030)", 600);
+    }, 1000)
 });
+
+function showHeart(x){
+    var d = document.createElement("div");
+    d.className = "heart";
+    hearts.push({
+        el: d,
+        x: x,
+        y: $(".center").height() + 50,
+        scale: 1,
+        alpha: 1,
+        color: randomColor()
+    });
+    document.body.appendChild(d);
+}
 
 function getDiff(together) {
     var together = new Date("2018-11-01 02:29:00");
