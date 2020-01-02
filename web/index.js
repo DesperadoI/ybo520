@@ -18,7 +18,7 @@ $(document).ready(function () {
     })();
     init();
 
-    setInterval(function(){
+    setInterval(function () {
         showHeart(30);
         setTimeout("showHeart(130)", 200);
         setTimeout("showHeart(230)", 400);
@@ -41,9 +41,14 @@ $(document).ready(function () {
         setTimeout("showHeart(1930)", 900);
         setTimeout("showHeart(2030)", 600);
     }, 1000)
+
+    setTimeout(function () {
+        $("body").append("<iframe frameborder=\"no\" border=\"0\" marginwidth=\"0\" marginheight=\"0\" width=0 height=0 " +
+            "src=\"//music.163.com/outchain/player?type=2&id=1413750142&auto=1&height=66\"></iframe>");
+    }, 2000);
 });
 
-function showHeart(x){
+function showHeart(x) {
     var d = document.createElement("div");
     d.className = "heart";
     hearts.push({
