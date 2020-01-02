@@ -2,20 +2,10 @@ html, body {
     overflow: hidden;
     width: 100%;
     height: 100%;
-}
-
-.background {
-    width: calc(100% - 200px);
-    height: calc(100% - 60px);
-    position: absolute;
-    top: 60px;
-    left: 200px;
-    z-index: -1;
-}
-
-.background img {
-    width: 100%;
-    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .title {
@@ -23,19 +13,18 @@ html, body {
     line-height: 55px;
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 200px;
     width: 5000px;
     background-color: #24292e;
-    color: #FFFFFF;
+    cursor: default;
 }
 
 .title span {
     margin-left: 20px;
-    cursor: default;
+    color: #f9b4d6;
 }
 
 .search {
-    margin-left: 10px;
     width: 466px;
     padding: 5px;
     height: 20px;
@@ -43,31 +32,83 @@ html, body {
     border: 1px solid #24292e;
     border-radius: 3px;
     background-color: #3f4448;
-    color: #FFFFFF;
+    color: #f9b4d6;
 }
 
 .left {
-    padding-top: 20px;
     width: 200px;
     height: 100vh;
     position: absolute;
-    top: 50px;
+    top: 0px;
     left: 0px;
     border: 1px solid #24292e;
     background-color: #24292e;
 }
 
-.time-item {
-    width: 100%;
-    padding-left: 20px;
-    height: 40px;
-    line-height: 40px;
-    color: white;
-    text-align: left;
-    cursor: pointer;
+.center {
+    width: calc(100% - 180px);
+    height: calc(100% - 60px);
+    position: absolute;
+    left: 200px;
+    top: 60px;
+    background-color: #5a7f92;
 }
 
-.time-item span {
-    margin-right:15px;
-    color: white;
+.heart-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.heart-box img {
+    width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    -webkit-transform: rotate(360deg);
+    animation: rotation 20s linear infinite;
+    -moz-animation: rotation 20s linear infinite;
+    -webkit-animation: rotation 20s linear infinite;
+    -o-animation: rotation 20s linear infinite;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 10px 0px 10px 16px;
+}
+
+.text {
+    padding-left: 30px;
+    position: relative;
+    cursor: default;
+}
+
+.text span {
+    position: absolute;
+    left: 88px;
+    top: 88px;
+    font-size: 12px;
+    color: #935BB6;
+}
+
+.text font {
+    position: absolute;
+    left: 47%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #935BB6;
+    font-weight: bold;
 }
