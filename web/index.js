@@ -18,35 +18,45 @@ $(document).ready(function () {
     })();
     init();
 
-    setInterval(function () {
-        showHeart(30);
-        setTimeout("showHeart(130)", 200);
-        setTimeout("showHeart(230)", 400);
-        setTimeout("showHeart(330)", 300);
-        setTimeout("showHeart(430)", 600);
-        setTimeout("showHeart(530)", 500);
-        setTimeout("showHeart(630)", 100);
-        setTimeout("showHeart(730)", 900);
-        setTimeout("showHeart(830)", 800);
-        setTimeout("showHeart(930)", 100);
-        setTimeout("showHeart(1030)", 200);
-        setTimeout("showHeart(1130)", 400);
-        setTimeout("showHeart(1230)", 800);
-        setTimeout("showHeart(1330)", 600);
-        setTimeout("showHeart(1430)", 400);
-        setTimeout("showHeart(1530)", 200);
-        setTimeout("showHeart(1630)", 900);
-        setTimeout("showHeart(1730)", 300);
-        setTimeout("showHeart(1830)", 600);
-        setTimeout("showHeart(1930)", 900);
-        setTimeout("showHeart(2030)", 600);
-    }, 1000)
+    bubbling();
+    var pop = setInterval("bubbling()", 1000);
 
-    setTimeout(function () {
-        $("body").append("<iframe frameborder=\"no\" border=\"0\" marginwidth=\"0\" marginheight=\"0\" width=0 height=0 " +
-            "src=\"//music.163.com/outchain/player?type=2&id=1413750142&auto=1&height=66\"></iframe>");
-    }, 2000);
+    window.onfocus = function(){
+        bubbling();
+        pop = setInterval("bubbling()", 1000);
+        $("title").html("(❤ ω ❤) mua~");
+    }
+
+    window.onblur = function(){
+        clearInterval(pop);
+        $("title").html("(๑´灬`๑) 你快回来~");
+    }
+
 });
+
+function bubbling() {
+    showHeart(30);
+    setTimeout("showHeart(130)", 200);
+    setTimeout("showHeart(230)", 400);
+    setTimeout("showHeart(330)", 300);
+    setTimeout("showHeart(430)", 600);
+    setTimeout("showHeart(530)", 500);
+    setTimeout("showHeart(630)", 100);
+    setTimeout("showHeart(730)", 900);
+    setTimeout("showHeart(830)", 800);
+    setTimeout("showHeart(930)", 100);
+    setTimeout("showHeart(1030)", 200);
+    setTimeout("showHeart(1130)", 400);
+    setTimeout("showHeart(1230)", 800);
+    setTimeout("showHeart(1330)", 600);
+    setTimeout("showHeart(1430)", 400);
+    setTimeout("showHeart(1530)", 200);
+    setTimeout("showHeart(1630)", 900);
+    setTimeout("showHeart(1730)", 300);
+    setTimeout("showHeart(1830)", 600);
+    setTimeout("showHeart(1930)", 900);
+    setTimeout("showHeart(2030)", 600);
+}
 
 function showHeart(x) {
     var d = document.createElement("div");
@@ -77,7 +87,10 @@ function getDiff(together) {
 }
 
 function init() {
-    css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+    css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);" +
+        "-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';" +
+        "width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;" +
+        "-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
     attachEvent();
     gameloop();
 }

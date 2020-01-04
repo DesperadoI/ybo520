@@ -8,6 +8,45 @@ html, body {
     user-select: none;
 }
 
+.netease {
+    z-index: 2;
+    position: absolute;
+    top: -34px;
+    left: -37px;
+    width: 200px;
+    height: 86px;
+}
+
+.netease-cover {
+    background-color: #1f1f1f;
+    width: 180px;
+    height: 50px;
+    position: absolute;
+    left: 15px;
+    top: 0px;
+    z-index: 3;
+}
+.netease-cover-b{
+    background-color: #1f1f1f;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    left:0px;
+    top: 17px;
+    z-index: 3;
+}
+.netease-cover-c{
+    background-color: #1f1f1f;
+    width: 180px;
+    height: 20px;
+    position: absolute;
+    left:20px;
+    top: 0px;
+    z-index: 3;
+    color: #f9b4d6;
+    font-size: 13px;
+}
+
 .title {
     height: 60px;
     line-height: 55px;
@@ -15,7 +54,7 @@ html, body {
     top: 0px;
     left: 200px;
     width: 5000px;
-    background-color: #24292e;
+    background-color: #1f1f1f;
     cursor: default;
 }
 
@@ -29,7 +68,7 @@ html, body {
     padding: 5px;
     height: 20px;
     outline: none;
-    border: 1px solid #24292e;
+    border: 1px solid #1f1f1f;
     border-radius: 3px;
     background-color: #3f4448;
     color: #f9b4d6;
@@ -41,8 +80,8 @@ html, body {
     position: absolute;
     top: 0px;
     left: 0px;
-    border: 1px solid #24292e;
-    background-color: #24292e;
+    border: 1px solid #1f1f1f;
+    background-color: #1f1f1f;
 }
 
 .center {
@@ -52,6 +91,7 @@ html, body {
     left: 200px;
     top: 60px;
     background-color: #5a7f92;
+    background-image: linear-gradient(#5a7f92, rgba(156, 156, 0, 0.48));
 }
 
 .heart-box {
@@ -86,13 +126,20 @@ html, body {
     width: 100px;
     height: 100px;
     border-radius: 50px;
-    margin: 10px 0px 10px 16px;
+    position: absolute;
+    left:45px;
+    top:35px;
+    z-index: 4;
 }
 
 .text {
     padding-left: 30px;
     position: relative;
     cursor: default;
+}
+
+.ma {
+    height: 140px;
 }
 
 .text span {
