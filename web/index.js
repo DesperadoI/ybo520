@@ -1,6 +1,6 @@
 var hearts = [];
 
-$(document).ready(function () {
+$(top).ready(function () {
     //计算时间
     getDiff();
     setInterval("getDiff()", 1000);
