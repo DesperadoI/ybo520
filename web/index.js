@@ -21,15 +21,22 @@ $(document).ready(function () {
     bubbling();
     var pop = setInterval("bubbling()", 1000);
 
-    window.onfocus = function(){
+    top.onfocus = function () {
         bubbling();
         pop = setInterval("bubbling()", 1000);
         $("title").html("(❤ ω ❤) mua~");
+        if (self != top) {
+            $("title", parent.document).html("(❤ ω ❤) mua~");
+        }
+
     }
 
-    window.onblur = function(){
+    top.onblur = function () {
         clearInterval(pop);
         $("title").html("(๑´灬`๑) 你快回来~");
+        if (self != top) {
+            $("title", parent.document).html("(๑´灬`๑) 你快回来~");
+        }
     }
 
 });
