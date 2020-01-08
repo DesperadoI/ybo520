@@ -47,33 +47,6 @@ html, body {
     font-size: 13px;
 }
 
-.title {
-    height: 60px;
-    line-height: 55px;
-    position: absolute;
-    top: 0px;
-    left: 200px;
-    width: 5000px;
-    background-color: #1f1f1f;
-    cursor: default;
-}
-
-.title span {
-    margin-left: 20px;
-    color: #f9b4d6;
-}
-
-.search {
-    width: 466px;
-    padding: 5px;
-    height: 20px;
-    outline: none;
-    border: 1px solid #1f1f1f;
-    border-radius: 3px;
-    background-color: #3f4448;
-    color: #f9b4d6;
-}
-
 .left {
     width: 200px;
     height: 100vh;
@@ -86,10 +59,10 @@ html, body {
 
 .center {
     width: calc(100% - 180px);
-    height: calc(100% - 60px);
+    height: calc(100%);
     position: absolute;
     left: 200px;
-    top: 60px;
+    top: 0px;
     background-color: #5a7f92;
     background-image: linear-gradient(#5a7f92, rgba(156, 156, 0, 0.48));
 }

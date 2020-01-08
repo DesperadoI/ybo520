@@ -64,7 +64,7 @@ function showHeart(x) {
     hearts.push({
         el: d,
         x: x,
-        y: $(".center").height() + 50,
+        y: $(".center").height()-20,
         scale: 1,
         alpha: 1,
         color: randomColor()
@@ -72,18 +72,12 @@ function showHeart(x) {
     document.body.appendChild(d);
 }
 
-function getDiff(together) {
+function getDiff() {
     var together = new Date("2018-11-01 02:29:00");
     var current = new Date();
     var diff = current.getTime() - together.getTime();
     var day = diff / 1000 / 60 / 60 / 24 + "";
-    var hour = (("0." + day.split(".")[1]) * 24) + "";
-    var min = (("0." + hour.split(".")[1]) * 60) + "";
-    var second = (("0." + min.split(".")[1]) * 60) + "";
     $("#day").html(parseInt(day));
-    $("#hour").html(parseInt(hour));
-    $("#min").html(parseInt(min));
-    $("#second").html(parseInt(second));
 }
 
 function init() {
