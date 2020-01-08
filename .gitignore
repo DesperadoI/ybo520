@@ -30,6 +30,7 @@ rebel-remote.xml
 
 out/
 bin/
+.idea/
 
 upload-dir
 logback-logs
