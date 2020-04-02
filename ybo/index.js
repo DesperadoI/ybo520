@@ -14,15 +14,16 @@ $(top).ready(function () {
     })();
     init();
 
+    bubbling();
     var pop = setInterval("bubbling()", 2000);
 
-    top.document.addEventListener('visibilitychange', function () {
-        var isHidden = top.document.hidden;
-        alert(isHidden);
+    document.addEventListener('visibilitychange', function () {
+        var isHidden = document.hidden;
         if (isHidden) {
             clearInterval(pop);
             $("title").html("(๑´灬`๑) 你快回来~");
         } else {
+            bubbling();
             pop = setInterval("bubbling()", 2000);
             $("title").html("(❤ ω ❤) mua~");
         }
