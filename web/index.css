@@ -13,13 +13,13 @@ html, body {
     position: absolute;
     top: -34px;
     left: -37px;
-    width: 200px;
+    width: 300px;
     height: 86px;
 }
 
 .netease-cover {
     background-color: #1f1f1f;
-    width: 180px;
+    width: 280px;
     height: 50px;
     position: absolute;
     left: 15px;
@@ -28,7 +28,7 @@ html, body {
 }
 .netease-cover-b{
     background-color: #1f1f1f;
-    width: 200px;
+    width: 300px;
     height: 50px;
     position: absolute;
     left:0px;
@@ -37,7 +37,7 @@ html, body {
 }
 .netease-cover-c{
     background-color: #1f1f1f;
-    width: 180px;
+    width: 280px;
     height: 20px;
     position: absolute;
     left:20px;
@@ -48,7 +48,7 @@ html, body {
 }
 
 .left {
-    width: 200px;
+    width:300px;
     height: 100vh;
     position: absolute;
     top: 0px;
@@ -58,10 +58,10 @@ html, body {
 }
 
 .center {
-    width: calc(100% - 180px);
+    width: calc(100% - 280px);
     height: calc(100%);
     position: absolute;
-    left: 200px;
+    left: 300px;
     top: 0px;
     background-color: #5a7f92;
     background-image: linear-gradient(#5a7f92, rgba(156, 156, 0, 0.48));
@@ -81,21 +81,21 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
-@-webkit-keyframes rotation {
-    from {
-        -webkit-transform: rotate(0deg);
-    }
-    to {
-        -webkit-transform: rotate(360deg);
-    }
-}
+/*@-webkit-keyframes rotation {*/
+    /*from {*/
+        /*-webkit-transform: rotate(0deg);*/
+    /*}*/
+    /*to {*/
+        /*-webkit-transform: rotate(360deg);*/
+    /*}*/
+/*}*/
 
 .rotate {
-    -webkit-transform: rotate(360deg);
-    animation: rotation 20s linear infinite;
-    -moz-animation: rotation 20s linear infinite;
-    -webkit-animation: rotation 20s linear infinite;
-    -o-animation: rotation 20s linear infinite;
+    /*-webkit-transform: rotate(360deg);*/
+    /*animation: rotation 20s linear infinite;*/
+    /*-moz-animation: rotation 20s linear infinite;*/
+    /*-webkit-animation: rotation 20s linear infinite;*/
+    /*-o-animation: rotation 20s linear infinite;*/
     width: 100px;
     height: 100px;
     border-radius: 50px;

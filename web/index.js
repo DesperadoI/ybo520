@@ -1,10 +1,6 @@
 var hearts = [];
 
 $(top).ready(function () {
-    //计算时间
-    getDiff();
-    setInterval("getDiff()", 1000);
-
     //鼠标点击和移动时冒出小心心 ♥
     window.requestAnimationFrame = (function () {
         return window.requestAnimationFrame ||
@@ -18,44 +14,43 @@ $(top).ready(function () {
     })();
     init();
 
-    bubbling();
-    var pop = setInterval("bubbling()", 1000);
+    var pop = setInterval("bubbling()", 2000);
 
-    top.onfocus = function () {
-        bubbling();
-        pop = setInterval("bubbling()", 1000);
-        $("title").html("(❤ ω ❤) mua~");
-    }
-
-    top.onblur = function () {
-        clearInterval(pop);
-        $("title").html("(๑´灬`๑) 你快回来~");
-    }
-
+    top.document.addEventListener('visibilitychange', function () {
+        var isHidden = top.document.hidden;
+        alert(isHidden);
+        if (isHidden) {
+            clearInterval(pop);
+            $("title").html("(๑´灬`๑) 你快回来~");
+        } else {
+            pop = setInterval("bubbling()", 2000);
+            $("title").html("(❤ ω ❤) mua~");
+        }
+    });
 });
 
 function bubbling() {
     showHeart(30);
-    setTimeout("showHeart(130)", 200);
-    setTimeout("showHeart(230)", 400);
-    setTimeout("showHeart(330)", 300);
-    setTimeout("showHeart(430)", 600);
-    setTimeout("showHeart(530)", 500);
-    setTimeout("showHeart(630)", 100);
-    setTimeout("showHeart(730)", 900);
-    setTimeout("showHeart(830)", 800);
-    setTimeout("showHeart(930)", 100);
-    setTimeout("showHeart(1030)", 200);
-    setTimeout("showHeart(1130)", 400);
-    setTimeout("showHeart(1230)", 800);
-    setTimeout("showHeart(1330)", 600);
-    setTimeout("showHeart(1430)", 400);
-    setTimeout("showHeart(1530)", 200);
-    setTimeout("showHeart(1630)", 900);
-    setTimeout("showHeart(1730)", 300);
-    setTimeout("showHeart(1830)", 600);
-    setTimeout("showHeart(1930)", 900);
-    setTimeout("showHeart(2030)", 600);
+    setTimeout("showHeart(130)", 400);
+    setTimeout("showHeart(230)", 800);
+    setTimeout("showHeart(330)", 600);
+    setTimeout("showHeart(430)", 1200);
+    setTimeout("showHeart(530)", 1000);
+    setTimeout("showHeart(630)", 200);
+    setTimeout("showHeart(730)", 1800);
+    setTimeout("showHeart(830)", 1600);
+    setTimeout("showHeart(930)", 200);
+    setTimeout("showHeart(1030)", 400);
+    setTimeout("showHeart(1130)", 800);
+    setTimeout("showHeart(1230)", 1600);
+    setTimeout("showHeart(1330)", 1200);
+    setTimeout("showHeart(1430)", 800);
+    setTimeout("showHeart(1530)", 400);
+    setTimeout("showHeart(1630)", 1800);
+    setTimeout("showHeart(1730)", 600);
+    setTimeout("showHeart(1830)", 1200);
+    setTimeout("showHeart(1930)", 1800);
+    setTimeout("showHeart(2030)", 1200);
 }
 
 function showHeart(x) {
@@ -64,20 +59,12 @@ function showHeart(x) {
     hearts.push({
         el: d,
         x: x,
-        y: $(".center").height()-20,
+        y: $(".center").height() - 20,
         scale: 1,
         alpha: 1,
         color: randomColor()
     });
     document.body.appendChild(d);
-}
-
-function getDiff() {
-    var together = new Date("2018-11-01 02:29:00");
-    var current = new Date();
-    var diff = current.getTime() - together.getTime();
-    var day = diff / 1000 / 60 / 60 / 24 + "";
-    $("#day").html(parseInt(day));
 }
 
 function init() {
@@ -110,7 +97,7 @@ function attachEvent() {
     }
     var i = 0;
     window.onmousemove = function (event) {
-        if (i % 15 == 0) {
+        if (i % 20 == 0) {
             createHeart(event);
         }
         i++
